@@ -1,0 +1,27 @@
+@font-face {
+  font-family: Octarine;
+  src: url("../../Fonts/OctarineFree/Octarine-Light.otf");
+}
+
+div {
+  /* font-family: Octarine; */
+}
+
+ul {
+  text-decoration: none;
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  padding: 0;
+}
+
+li {
+  padding: 5px;
+  vertical-align: middle;
+  color: aqua;
+}
+
+.MainHeader {
+  display: flex;
+  justify-content: space-between;
+}
