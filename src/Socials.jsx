@@ -1,6 +1,5 @@
 import SocialsCSS from "./CSS/Socials.module.css";
 export function Socials({ SocialsList }) {
-  console.log(SocialsList);
   return (
     <>
       <ul>

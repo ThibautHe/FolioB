@@ -24,4 +24,5 @@ li {
 .MainHeader {
   display: flex;
   justify-content: space-between;
+  margin: 25px;
 }

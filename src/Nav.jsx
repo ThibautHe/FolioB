@@ -7,7 +7,7 @@ export function Nav({ navs }) {
   } else {
     currentNav = baseNav;
   }
-  console.log(navs);
+
   let navArray = [];
   currentNav.forEach((item) => {
     navArray.push(

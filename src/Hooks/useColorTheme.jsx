@@ -6,16 +6,16 @@ const ColorThemeContext = createContext({
 });
 
 export function useColorTheme() {
-  const { color,handleThemeChange } = useContext(ColorThemeContext);
+  const { color, handleThemeChange } = useContext(ColorThemeContext);
   return {
-        theme: color,
-        handleThemeChange
-    };
+    theme: color,
+    handleThemeChange,
+  };
 }
 export function ThemeContextProvider({ children }) {
   //const [theme, setTheme] = useState(0);
-  const color1 = [255, 0, 0];
-  const color2 = [0, 0, 255];
+  const color1 = [0, 0, 0];
+  const color2 = [244, 223, 200];
   const [color, setColor] = useState("rgb(0,0,0)");
   const handleThemeChange = (value) => {
     //setTheme(() => value);
