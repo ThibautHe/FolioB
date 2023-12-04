@@ -80,8 +80,11 @@
   text-align: center;
 }
 
+.MainContentContainer {
+  padding-top: 200px;
+}
 .mainArticle {
-  margin: 15% 15% 5% 15%;
+  margin: 0 15% 5% 15%;
   width: 380px;
 }
 
@@ -96,6 +99,9 @@
 }
 .mainTitleSpan {
   margin-left: 37%;
+}
+.main-video {
+  width: 47%;
 }
 
 .education-title {

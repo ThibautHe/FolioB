@@ -6,13 +6,16 @@ import { Header } from "./header.jsx";
 import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 import "./CSS/MainStory.css";
 export default function App() {
-  const { theme } = useColorTheme();
+  const { theme, readableColor } = useColorTheme();
   console.log("render");
   return (
     <>
       <Header />
 
-      <div className="MainContentContainer" style={{ color: theme }}>
+      <div
+        className="MainContentContainer"
+        style={{ backgroundColor: theme, color: readableColor }}
+      >
         <div className="mainArticle">
           <h1 className="mainTitle">
             berkay <span className="mainTitleSpan">erdemir.</span>
@@ -35,7 +38,14 @@ export default function App() {
 
       <div className="main-story-container">
         <div className="main-story-article">
-          <img src="" alt="" />
+          <video
+            className="main-video"
+            loop
+            autoPlay
+            muted
+            src="../../images/ShowreelFiverr.mp4"
+            alt=""
+          />
           <div className="main-story-content">
             <h1 className="main-story-title">
               how I started to like <span>motion graphics</span> and{" "}

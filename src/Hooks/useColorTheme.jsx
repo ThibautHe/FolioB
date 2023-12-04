@@ -1,29 +1,40 @@
 import { createContext, useContext, useState } from "react";
 
 const ColorThemeContext = createContext({
-  color: "0,0,0",
-  handleThemeChange: () => {},
+  
 });
 
 export function useColorTheme() {
-  const { color, handleThemeChange } = useContext(ColorThemeContext);
+  const { color, readableColor, handleThemeChange } = useContext(ColorThemeContext);
   return {
     theme: color,
+    readableColor,
     handleThemeChange,
   };
 }
+
 export function ThemeContextProvider({ children }) {
-  //const [theme, setTheme] = useState(0);
-  const color1 = [0, 0, 0];
-  const color2 = [244, 223, 200];
-  const [color, setColor] = useState("rgb(0,0,0)");
+  const color1 = [15, 12, 29];
+  const color2 = [234, 215, 254];
+
+  const [readableColor, setReadableColor] = useState(0);
+  const [color, setColor] = useState(`rgb(${color2.join(",")})`);
+
   const handleThemeChange = (value) => {
-    //setTheme(() => value);
+    setReadableColor(() => {
+      if (value < 50) {
+        return `rgb(${color2.join(",")})`;
+      } else {
+        return `rgb(${color1.join(",")})`;
+      }
+    });
     setColor(lerpRGBColor(color1, color2, value / 100));
   };
 
   return (
-    <ColorThemeContext.Provider value={{ color, handleThemeChange }}>
+    <ColorThemeContext.Provider
+      value={{ color, readableColor, handleThemeChange }}
+    >
       {children}
     </ColorThemeContext.Provider>
   );
