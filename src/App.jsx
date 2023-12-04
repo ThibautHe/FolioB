@@ -29,7 +29,7 @@ export default function App() {
         </div>
         <div className="vslider-container">
           <div className="vslider">
-            <div className="vslider-ball"></div>
+            <div style={{"background-color":readableColor}} className="vslider-ball"></div>
             <div className="vslider-ball-outline"></div>
           </div>
           <p className="vslider-value"></p>

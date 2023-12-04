@@ -6,7 +6,7 @@ export const Slider = () => {
   const [value, setValue] = useState(100);
   const [sliderBallStyle, setSliderBallStyle] = useState({ left: "100%" });
   const sliderRef = useRef(null);
-  const { theme, handleThemeChange } = useColorTheme();
+  const { theme,readableColor, handleThemeChange } = useColorTheme();
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -24,16 +24,17 @@ export const Slider = () => {
       }
 
       const percentage = (newPosition / sliderRect.width) * 100;
-      setSliderBallStyle((prevStyle) => {
-        const newStyle = { left: `${percentage}%` };
-        return newStyle;
-      });
-
+      
       const roundedValue = Math.round(percentage);
       if (roundedValue === value) {
         return;
       }
       handleThemeChange(roundedValue);
+      
+      setSliderBallStyle((prevStyle) => {
+        const newStyle = percentage;
+        return newStyle;
+      });
       //setValue(roundedValue);
     };
 
@@ -57,9 +58,9 @@ export const Slider = () => {
 
   return (
     <div className="slider-container">
-      <div ref={sliderRef} className="slider" onMouseDown={handleMouseDown}>
-        <div className="slider-ball" style={sliderBallStyle}></div>
-        <div className="slider-ball-outline" style={sliderBallStyle}></div>
+      <div ref={sliderRef} className="slider" onMouseDown={handleMouseDown} style={{backgroundColor:readableColor}}>
+        <div className="slider-ball" style={{"left":`${sliderBallStyle}%`, "background-color":readableColor}}></div>
+        <div className="slider-ball-outline" style={{"left":`${sliderBallStyle}%`, "border-color":readableColor}}></div>
       </div>
       <p className="slider-value">{`${theme}`}</p>
     </div>
