@@ -5,14 +5,14 @@ import { Slider } from "./Slider.jsx";
 import { Header } from "./header.jsx";
 import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 import "./CSS/MainStory.css";
-export default function App() {
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Portfolio } from "./Portfolio.jsx";
+
+const About = () => {
   const { theme, readableColor } = useColorTheme();
-  console.log("render");
   return (
     <>
-      <Header />
-
-      <div
+    <div
         className="MainContentContainer"
         style={{ backgroundColor: theme, color: readableColor }}
       >
@@ -25,15 +25,9 @@ export default function App() {
             possimus sed saepe dolor quibusdam quae animi corrupti iste error
             iusto, illum et. Ab, repellat sint iure ea architecto qui quod.
           </p>
-          <Slider />
+          <Slider isVertical={false} hasEffect={true} />
         </div>
-        <div className="vslider-container">
-          <div className="vslider">
-            <div style={{"background-color":readableColor}} className="vslider-ball"></div>
-            <div className="vslider-ball-outline"></div>
-          </div>
-          <p className="vslider-value"></p>
-        </div>
+        <Slider isVertical={true} hasEffect={false} offsetLeft={'85%'} />
       </div>
 
       <div className="main-story-container">
@@ -62,6 +56,7 @@ export default function App() {
       </div>
 
       <div className="education-container">
+        <Slider isVertical={true} offsetLeft={50}/>
         <h1 className="education-title">my education</h1>
         <div className="education-line" />
         <div className="education-content-container">
@@ -188,8 +183,8 @@ export default function App() {
         </div>
       </div>
 
-      <div className="main-footer">
-        <h1>GET IN TOUCH</h1>
+      <div className="main-footer" style={{backgroundColor: "rgb(15, 12, 29)"}}>
+        <h1>GET IN <span className="bold" style={{color:"rgb(234, 215, 254)"}}>TOUCH.</span></h1>
         <p className="main-footer-description">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
           distinctio amet voluptatem magnam? Obcaecati harum repellat laboriosam
@@ -204,9 +199,37 @@ export default function App() {
             <a href="">linkedin</a>
           </li>
         </ul>
-        <hr />
+        <div className="footer-line"></div>
         <p className="main-footer-close">berkay erdemir 2023</p>
       </div>
     </>
-  );
+  )
+}
+const router = createBrowserRouter([
+  {
+    path:'/',
+    element: <Header/>,
+    children:[
+      {
+        path:'',
+        element: <About/>
+      }
+      ,
+      {
+        path:"Home",
+        element: <About/>
+      }
+      ,
+      {
+        path:"about me",
+        element:<Portfolio/>
+      }
+    ]
+  }
+]);
+
+
+export default function App() {
+
+  return <RouterProvider router={router} />;
 }

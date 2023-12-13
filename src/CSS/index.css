@@ -42,18 +42,19 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
 .vslider-container {
-  height: 200px;
-  position: relative;
+  height: 300px;
+  position: absolute;
+  bottom:0;
+  left: 85%;
 }
 
 .vslider {
   width: 2px;
-  height: 140%;
+  height: 100%;
   background-color: black;
   position: absolute;
-  right: 20%;
-  top: -40%;
 }
 
 .vslider-ball {
@@ -81,11 +82,14 @@
 }
 
 .MainContentContainer {
-  padding-top: 200px;
+  height: 91.5vh;
+  position: relative;
+
 }
 .mainArticle {
-  margin: 0 15% 5% 15%;
+  margin: 0 0 5% 15%;
   width: 380px;
+  padding-top: 10%;
 }
 
 .mainTitle {
@@ -104,8 +108,12 @@
   width: 47%;
 }
 
+.education-container
+{
+  position: relative;
+}
 .education-title {
-  margin-top: 50px;
+  padding-top: 50px;
   text-align: center;
   font-family: OctarineBold;
 }
@@ -158,6 +166,7 @@
   margin: 10px;
   display: flex;
   align-items: baseline;
+  text-align: center;
 }
 
 .skill-title {
@@ -174,10 +183,13 @@
 .skill-description {
   width: 66%;
   font-size: 1.2vw;
+  text-align: justify;
+  margin: auto;
 }
 
 .softwares-container {
   padding-top: 100px;
+  margin-bottom: 5%;
 }
 .softwares-content {
   text-align: center;
@@ -211,14 +223,14 @@
 }
 
 .main-footer h1 {
-  padding-top: 50px;
+  padding-top: 100px;
   color: white;
   font-size: 9vh;
   font-family: OctarineBold;
 }
 .main-footer-description {
-  width: 50%;
-  margin: auto;
+  width: 20%;
+  margin: 3em auto;
   padding: 25px;
   text-align: justify;
   color: white;
@@ -227,13 +239,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 0 50px 0;
 }
 .main-footer li {
   margin: 25px 25px;
 }
 .main-footer a:hover {
   animation-duration: 1sec;
-  background-color: rgb(30, 30, 30);
+  background-color: rgb(234, 215, 254);
+  color: rgb(15, 12, 29);
   cursor: pointer;
 }
 
@@ -246,10 +260,12 @@
   transition: 0.8s;
 }
 
-.main-footer hr {
-  margin: 5% 15% 0 15%;
+.footer-line {
+  margin: 20px auto;
   height: 5px;
-  background-color: white;
+  background-color: lightgray;
+  border-color: lightgray;
+  width: 90%;
 }
 
 .main-footer-close {

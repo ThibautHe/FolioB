@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import navCSS from "./CSS/nav.module.css";
 import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 
@@ -16,9 +17,9 @@ export function Nav({ navs }) {
   currentNav.forEach((item) => {
     navArray.push(
       <li key={item} onClick={() => null}>
-        <a style={{"color":readableColor}} className={navCSS.link} href="">
+        <NavLink to={`/${item}`} style={{"color":readableColor}} className={navCSS.link} href="">
           {item}
-        </a>
+        </NavLink>
       </li>
     );
   });

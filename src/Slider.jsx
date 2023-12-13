@@ -1,16 +1,15 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { ThemeContextProvider, useColorTheme } from "./Hooks/useColorTheme.jsx";
 
-export const Slider = () => {
+export const Slider = ({isVertical,offsetLeft,hasEffect}) => {
   const [isDragging, setIsDragging] = useState(false);
-  const [value, setValue] = useState(100);
-  const [sliderBallStyle, setSliderBallStyle] = useState({ left: "100%" });
+  const { theme,readableColor, handleThemeChange, colorPercentage } = useColorTheme();
   const sliderRef = useRef(null);
-  const { theme,readableColor, handleThemeChange } = useColorTheme();
 
+  const DIVNAME = isVertical ? "vslider" : "slider";
   useEffect(() => {
     const handleMouseMove = (e) => {
-      if (!isDragging) {
+      if (!isDragging || !hasEffect) {
         return;
       }
 
@@ -26,16 +25,10 @@ export const Slider = () => {
       const percentage = (newPosition / sliderRect.width) * 100;
       
       const roundedValue = Math.round(percentage);
-      if (roundedValue === value) {
+      if (roundedValue === colorPercentage) {
         return;
       }
       handleThemeChange(roundedValue);
-      
-      setSliderBallStyle((prevStyle) => {
-        const newStyle = percentage;
-        return newStyle;
-      });
-      //setValue(roundedValue);
     };
 
     const handleMouseUp = () => {
@@ -52,17 +45,22 @@ export const Slider = () => {
   }, [isDragging]);
 
   const handleMouseDown = (e) => {
+    if(!hasEffect) 
+    {
+      return;
+    }
+
     e.preventDefault();
     setIsDragging(true);
   };
 
+
   return (
-    <div className="slider-container">
-      <div ref={sliderRef} className="slider" onMouseDown={handleMouseDown} style={{backgroundColor:readableColor}}>
-        <div className="slider-ball" style={{"left":`${sliderBallStyle}%`, "background-color":readableColor}}></div>
-        <div className="slider-ball-outline" style={{"left":`${sliderBallStyle}%`, "border-color":readableColor}}></div>
+    <div style={{"left": offsetLeft}} className={`${DIVNAME}-container`}>
+      <div ref={sliderRef} className={`${DIVNAME}`} onMouseDown={handleMouseDown} style={{backgroundColor:readableColor}}>
+        <div className={`${DIVNAME}-ball`} style={{"left":`${colorPercentage}%`, backgroundColor:readableColor}}></div>
+        <div className={`${DIVNAME}-ball-outline`} style={{"left":`${colorPercentage}%`, borderColor:readableColor}}></div>
       </div>
-      <p className="slider-value">{`${theme}`}</p>
     </div>
   );
 };
