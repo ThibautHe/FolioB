@@ -25,9 +25,9 @@ const About = () => {
             possimus sed saepe dolor quibusdam quae animi corrupti iste error
             iusto, illum et. Ab, repellat sint iure ea architecto qui quod.
           </p>
-          <Slider isVertical={false} hasEffect={true} />
+          <Slider isVertical={false} hasEffect={true} isRelative={true} />
         </div>
-        <Slider isVertical={true} hasEffect={false} offsetLeft={'85%'} />
+        <Slider isVertical={true} hasEffect={false} offsetLeft={'85%'} isRelative={false} />
       </div>
 
       <div className="main-story-container">
@@ -56,7 +56,7 @@ const About = () => {
       </div>
 
       <div className="education-container">
-        <Slider isVertical={true} offsetLeft={50}/>
+        <Slider isVertical={true} offsetLeft={"50%"} isRelative={true} sliderHeight={"100px"} BallPos={100}/>
         <h1 className="education-title">my education</h1>
         <div className="education-line" />
         <div className="education-content-container">

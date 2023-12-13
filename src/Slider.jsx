@@ -1,12 +1,18 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { ThemeContextProvider, useColorTheme } from "./Hooks/useColorTheme.jsx";
 
-export const Slider = ({isVertical,offsetLeft,hasEffect}) => {
+export const Slider = ({isVertical,offsetLeft,hasEffect,isRelative,sliderHeight,BallPos}) => {
   const [isDragging, setIsDragging] = useState(false);
   const { theme,readableColor, handleThemeChange, colorPercentage } = useColorTheme();
   const sliderRef = useRef(null);
 
   const DIVNAME = isVertical ? "vslider" : "slider";
+  const POSITION = isRelative ? "relative" : "absolute";
+
+  const STYLE = isVertical ? { backgroundColor:readableColor, "top":`${BallPos}%`} : {"left":`${colorPercentage}%`, backgroundColor:readableColor};
+  const BORDERSTYLE = isVertical ? { borderColor:readableColor, "top":`${BallPos}%`} : {"left":`${colorPercentage}%`, borderColor:readableColor};
+
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       if (!isDragging || !hasEffect) {
@@ -56,10 +62,10 @@ export const Slider = ({isVertical,offsetLeft,hasEffect}) => {
 
 
   return (
-    <div style={{"left": offsetLeft}} className={`${DIVNAME}-container`}>
+    <div style={{"left": offsetLeft, position:POSITION, height:sliderHeight}} className={`${DIVNAME}-container`}>
       <div ref={sliderRef} className={`${DIVNAME}`} onMouseDown={handleMouseDown} style={{backgroundColor:readableColor}}>
-        <div className={`${DIVNAME}-ball`} style={{"left":`${colorPercentage}%`, backgroundColor:readableColor}}></div>
-        <div className={`${DIVNAME}-ball-outline`} style={{"left":`${colorPercentage}%`, borderColor:readableColor}}></div>
+        <div className={`${DIVNAME}-ball`} style={STYLE}></div>
+        <div className={`${DIVNAME}-ball-outline`} style={BORDERSTYLE}></div>
       </div>
     </div>
   );
