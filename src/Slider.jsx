@@ -62,11 +62,18 @@ export const Slider = ({isVertical,offsetLeft,hasEffect,isRelative,sliderHeight,
 
 
   return (
-    <div style={{"left": offsetLeft, position:POSITION, height:sliderHeight}} className={`${DIVNAME}-container`}>
-      <div ref={sliderRef} className={`${DIVNAME}`} onMouseDown={handleMouseDown} style={{backgroundColor:readableColor}}>
+    isRelative ? (
+    <div style={{ position:POSITION, height:sliderHeight}} className={`${DIVNAME}-container`}>
+      <div ref={sliderRef} className={`${DIVNAME}`} onMouseDown={handleMouseDown} style={{ "left": offsetLeft, backgroundColor:readableColor}}>
         <div className={`${DIVNAME}-ball`} style={STYLE}></div>
         <div className={`${DIVNAME}-ball-outline`} style={BORDERSTYLE}></div>
       </div>
-    </div>
+    </div> )
+    : (
+    <div ref={sliderRef} className={`${DIVNAME}`} onMouseDown={handleMouseDown} style={{"left": offsetLeft, height:sliderHeight ,backgroundColor:readableColor }}>
+        <div className={`${DIVNAME}-ball`} style={STYLE}></div>
+        <div className={`${DIVNAME}-ball-outline`} style={BORDERSTYLE}></div>
+      </div>
+    )
   );
 };

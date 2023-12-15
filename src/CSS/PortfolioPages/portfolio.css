@@ -1,0 +1,15 @@
+.pf-main-content ul
+{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.pf-images
+{
+    width: 100%;
+}
+
+.pf-main-content ul li
+{
+    width: 50%;
+}

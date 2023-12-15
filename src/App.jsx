@@ -27,7 +27,7 @@ const About = () => {
           </p>
           <Slider isVertical={false} hasEffect={true} isRelative={true} />
         </div>
-        <Slider isVertical={true} hasEffect={false} offsetLeft={'85%'} isRelative={false} />
+        <Slider isVertical={true} hasEffect={false} offsetLeft={'80%'} isRelative={false} sliderHeight={"35%"} />
       </div>
 
       <div className="main-story-container">
@@ -42,7 +42,7 @@ const About = () => {
           />
           <div className="main-story-content">
             <h1 className="main-story-title">
-              how I started to like <span>motion graphics</span> and{" "}
+              how I started to like <span>motion graphics</span> and
               <span>vfx</span>
             </h1>
             <p className="main-story-description">
