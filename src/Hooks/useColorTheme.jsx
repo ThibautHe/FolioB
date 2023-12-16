@@ -9,12 +9,14 @@ const ColorThemeContext = createContext({
 
 
 export function useColorTheme() {
-  const { color, readableColor, handleThemeChange, colorPercentage } = useContext(ColorThemeContext);
+  const { color, readableColor, handleThemeChange, colorPercentage,color1,color2 } = useContext(ColorThemeContext);
   return {
     theme: color,
     readableColor,
     handleThemeChange,
-    colorPercentage
+    colorPercentage,
+    color1,
+    color2
   };
 }
 
@@ -44,7 +46,7 @@ export function ThemeContextProvider({ children }) {
 
   return (
     <ColorThemeContext.Provider
-      value={{ color, readableColor, handleThemeChange, colorPercentage }}
+      value={{ color, readableColor, handleThemeChange, colorPercentage,color1,color2 }}
     >
       {children}
     </ColorThemeContext.Provider>
