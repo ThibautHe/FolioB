@@ -7,6 +7,7 @@ import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 import "./CSS/MainStory.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Portfolio } from "./Portfolio.jsx";
+import {Footer} from "./Footer.jsx";
 
 const About = () => {
   const { theme, readableColor } = useColorTheme();
@@ -182,6 +183,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   )
 }

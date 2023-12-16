@@ -1,9 +1,9 @@
 import { useColorTheme } from "./Hooks/useColorTheme"
 
-export function FooterMain()
+export function Footer()
 {
     const {color1,color2} = useColorTheme();
-    
+
     return(
     <>
         <div className="main-footer" style={{backgroundColor: `rgb(${color1.join(",")})`}}>
