@@ -5,9 +5,10 @@ import { Slider } from "./Slider.jsx";
 import { Header } from "./header.jsx";
 import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 import "./CSS/MainStory.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Portfolio } from "./Portfolio.jsx";
 import {Footer} from "./Footer.jsx";
+import { SingleProject } from "./SingleProject.jsx";
 
 const About = () => {
   const { theme, readableColor } = useColorTheme();
@@ -203,8 +204,18 @@ const router = createBrowserRouter([
       }
       ,
       {
-        path:"about me",
-        element:<Portfolio/>
+        path:"portfolio",
+        element:<><Outlet/></>,
+        children:[
+          {
+            path:'',
+            element:<Portfolio/>,
+          },
+          {
+            path:":id",
+            element:<SingleProject/>
+          }
+        ]
       }
     ]
   }

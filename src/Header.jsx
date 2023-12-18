@@ -7,7 +7,7 @@ import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 import { Outlet } from "react-router-dom";
 
 export function Header() {
-  const navItems = ["Home", "About me", "Contact"];
+  const navItems = ["Home", "Portfolio", "Contact"];
   const socials = ["insta", "fb", "linkdn"];
   const { theme, readableColor } = useColorTheme();
 

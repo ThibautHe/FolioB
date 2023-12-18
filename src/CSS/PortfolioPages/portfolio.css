@@ -12,4 +12,5 @@
 .pf-main-content ul li
 {
     width: 50%;
+    box-sizing: border-box;
 }
