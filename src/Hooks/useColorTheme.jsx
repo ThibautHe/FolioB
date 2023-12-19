@@ -21,8 +21,10 @@ export function useColorTheme() {
 }
 
 export function ThemeContextProvider({ children }) {
-  const color1 = [15, 12, 29];
-  const color2 = [234, 215, 254];
+  //const color1 = [15, 12, 29];
+  //const color2 = [234, 215, 254];
+  const color1 = [37, 41, 45];
+  const color2 = [255,183,74];
 
   const [colorPercentage, setColorPercentage] = useState(100);
   const [readableColor, setReadableColor] = useState(`rgb(${color1.join(",")})`);

@@ -17,11 +17,14 @@ export function Portfolio() {
   return (
   <>
     <div className="pf-main-container">
-        <h1>Some of my <span className="bold">Projects.</span></h1>
+        <h1 className="pf-main-title">Some of my <span className="bold">projects.</span></h1>
         <div className="pf-main-content">
             <ul>
-                {Projects.map(project => (
+                {Projects.map((project, index) => (
+                  <>
                   <li key={project.name}><NavLink to={`/portfolio/${project.id}`}><img className="pf-images" src={project.img}/></NavLink></li>
+                  {((index + 1) % 2 === 0) && <div className="pf-hr" style={ {width:"51%", height:"5px"}}/>}
+                  </>
                 ))}
             </ul>
         </div>

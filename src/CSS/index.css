@@ -108,6 +108,7 @@
 .education-container
 {
   position: relative;
+  padding-bottom: 5vh;
 }
 .education-title {
   padding-top: 50px;

@@ -57,7 +57,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="education-container">
+      <div className="education-container" style={{backgroundColor:theme}}>
         <Slider isVertical={true} offsetLeft={"50%"} isRelative={true} sliderHeight={"100px"} BallPos={100}/>
         <h1 className="education-title">my education</h1>
         <div className="education-line" />

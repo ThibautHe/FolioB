@@ -1,7 +1,12 @@
+.pf-main-container
+{
+    padding-bottom: 15vh;
+}
 .pf-main-content ul
 {
     display:flex;
     flex-wrap: wrap;
+    font-size: 0;
 }
 
 .pf-images
@@ -13,4 +18,17 @@
 {
     width: 50%;
     box-sizing: border-box;
+}
+
+.pf-main-title
+{
+    text-align: center;
+    margin: 5vh 0;
+}
+
+.pf-hr
+{
+    margin: 5vh auto;
+    border-radius: 10px;
+    background-color: black;
 }
