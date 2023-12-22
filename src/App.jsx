@@ -11,9 +11,10 @@ import {Footer} from "./Footer.jsx";
 import { SingleProject } from "./SingleProject.jsx";
 
 const About = () => {
-  const { theme, readableColor } = useColorTheme();
+  const { theme, readableColor,color1, color2 } = useColorTheme();
+  console.log(color1);
   return (
-    <>
+    <div>
     <div
         className="MainContentContainer"
         style={{ backgroundColor: theme, color: readableColor }}
@@ -32,7 +33,7 @@ const About = () => {
         <Slider isVertical={true} hasEffect={false} offsetLeft={'80%'} isRelative={false} sliderHeight={"35%"} />
       </div>
 
-      <div className="main-story-container">
+      <div className="main-story-container" style={{color:`rgb(${color2.join(",")})`}}>
         <div className="main-story-article">
           <video
             className="main-video"
@@ -92,7 +93,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="skills">
+      <div className="skills" style={{backgroundColor:theme}}>
         <div className="skills-container">
           <div className="skill">
             <img
@@ -161,7 +162,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="softwares-container">
+      <div className="softwares-container" style={{backgroundColor:theme}}>
         <div className="softwares-content">
           <h1>
             <span className="bold">softwares</span>
@@ -185,7 +186,7 @@ const About = () => {
         </div>
       </div>
       <Footer/>
-    </>
+    </div>
   )
 }
 const router = createBrowserRouter([

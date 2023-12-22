@@ -109,6 +109,7 @@
 {
   position: relative;
   padding-bottom: 5vh;
+  color: black;
 }
 .education-title {
   padding-top: 50px;
@@ -187,7 +188,7 @@
 
 .softwares-container {
   padding-top: 100px;
-  margin-bottom: 5%;
+  padding-bottom: 5%;
 }
 .softwares-content {
   text-align: center;
