@@ -7,15 +7,16 @@ import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 import "./CSS/MainStory.css";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Portfolio } from "./Portfolio.jsx";
-import {Footer} from "./Footer.jsx";
+import { Footer } from "./Footer.jsx";
+import { Contact } from "./contact.jsx";
 import { SingleProject } from "./SingleProject.jsx";
 
 const About = () => {
-  const { theme, readableColor,color1, color2 } = useColorTheme();
+  const { theme, readableColor, color1, color2 } = useColorTheme();
   console.log(color1);
   return (
     <div>
-    <div
+      <div
         className="MainContentContainer"
         style={{ backgroundColor: theme, color: readableColor }}
       >
@@ -30,10 +31,19 @@ const About = () => {
           </p>
           <Slider isVertical={false} hasEffect={true} isRelative={true} />
         </div>
-        <Slider isVertical={true} hasEffect={false} offsetLeft={'80%'} isRelative={false} sliderHeight={"35%"} />
+        <Slider
+          isVertical={true}
+          hasEffect={false}
+          offsetLeft={"80%"}
+          isRelative={false}
+          sliderHeight={"35%"}
+        />
       </div>
 
-      <div className="main-story-container" style={{color:`rgb(${color2.join(",")})`}}>
+      <div
+        className="main-story-container"
+        style={{ color: `rgb(${color2.join(",")})` }}
+      >
         <div className="main-story-article">
           <video
             className="main-video"
@@ -58,9 +68,17 @@ const About = () => {
         </div>
       </div>
 
-      <div className="education-container" style={{backgroundColor:theme}}>
-        <Slider isVertical={true} offsetLeft={"50%"} isRelative={true} sliderHeight={"100px"} BallPos={100}/>
-        <h1 className="education-title">my education</h1>
+      <div className="education-container" style={{ backgroundColor: theme }}>
+        <Slider
+          isVertical={true}
+          offsetLeft={"50%"}
+          isRelative={true}
+          sliderHeight={"100px"}
+          BallPos={100}
+        />
+        <h1 className="education-title" style={{ color: readableColor }}>
+          my education
+        </h1>
         <div className="education-line" />
         <div className="education-content-container">
           <div className="education-content">
@@ -93,7 +111,10 @@ const About = () => {
         </div>
       </div>
 
-      <div className="skills" style={{backgroundColor:theme}}>
+      <div
+        className="skills"
+        style={{ backgroundColor: theme, color: readableColor }}
+      >
         <div className="skills-container">
           <div className="skill">
             <img
@@ -162,7 +183,10 @@ const About = () => {
         </div>
       </div>
 
-      <div className="softwares-container" style={{backgroundColor:theme}}>
+      <div
+        className="softwares-container"
+        style={{ backgroundColor: theme, color: readableColor }}
+      >
         <div className="softwares-content">
           <h1>
             <span className="bold">softwares</span>
@@ -185,45 +209,60 @@ const About = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
-  )
-}
+  );
+};
+
 const router = createBrowserRouter([
   {
-    path:'/',
-    element: <Header/>,
-    children:[
+    path: "/",
+    element: <Header />,
+    children: [
       {
-        path:'',
-        element: <About/>
-      }
-      ,
+        path: "",
+        element: <About />,
+      },
       {
-        path:"Home",
-        element: <About/>
-      }
-      ,
+        path: "Home",
+        element: <About />,
+      },
       {
-        path:"portfolio",
-        element:<><Outlet/></>,
-        children:[
+        path: "portfolio",
+        element: (
+          <>
+            <Outlet />
+          </>
+        ),
+        children: [
           {
-            path:'',
-            element:<Portfolio/>,
+            path: "",
+            element: <Portfolio />,
           },
           {
-            path:":id",
-            element:<SingleProject/>
-          }
-        ]
-      }
-    ]
-  }
+            path: ":id",
+            element: <SingleProject />,
+          },
+        ],
+      },
+      {
+        path: "contact",
+        element: (
+          <>
+            <Outlet />
+          </>
+        ),
+        children: [
+          {
+            path: "",
+            element: <Contact />,
+          },
+        ],
+      },
+    ],
+  },
 ]);
 
-
 export default function App() {
-
   return <RouterProvider router={router} />;
 }

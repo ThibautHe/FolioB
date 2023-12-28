@@ -14,7 +14,7 @@
 
 .slider-container {
   margin: 8% 0;
-  width: 100%; /* Adjust the width as needed */
+  width: 60%; /* Adjust the width as needed */
 }
 
 .slider {
@@ -46,7 +46,7 @@
 .vslider-container {
   height: 300px;
   position: absolute;
-  bottom:0;
+  bottom: 0;
 }
 
 .vslider {
@@ -84,29 +84,28 @@
 .MainContentContainer {
   height: 91.5vh;
   position: relative;
-
 }
 .mainArticle {
-  margin: 0 0 5% 15%;
-  width: 380px;
   padding-top: 10%;
+  width: 70%;
+  margin: 0 10% 0 10%;
 }
 
 .mainTitle {
   display: flex;
   flex-direction: column;
-  font-size: 7vh;
+  font-size: clamp(1rem, 10vw + 1rem, 5rem);
   font-weight: 200;
 }
 .mainDescription {
-  flex-direction: column;
+  max-width: 444px;
+  padding-top: 3em ;
 }
 .mainTitleSpan {
-  margin-left: 37%;
+  margin-left: 20%;
 }
 
-.education-container
-{
+.education-container {
   position: relative;
   padding-bottom: 5vh;
   color: black;
@@ -165,7 +164,10 @@
   margin: 10px;
   display: flex;
   align-items: baseline;
-  text-align: center;
+}
+
+.skill-header {
+  margin-left: 1rem;
 }
 
 .skill-title {
@@ -180,10 +182,9 @@
 }
 
 .skill-description {
-  width: 66%;
   font-size: 1.2vw;
   text-align: justify;
-  margin: auto;
+  width: 80%;
 }
 
 .softwares-container {
@@ -224,7 +225,7 @@
 .main-footer h1 {
   padding-top: 100px;
   color: white;
-  font-size: 9vh;
+  font-size: 5em;
   font-family: OctarineBold;
 }
 .main-footer-description {
@@ -243,9 +244,12 @@
 .main-footer li {
   margin: 25px 25px;
 }
+:root {
+  --color1: 255, 183, 74;
+}
 .main-footer a:hover {
-  animation-duration: 1sec;
-  background-color: rgb(234, 215, 254);
+  animation-duration: 1s;
+  background-color: rgb(var(--color1));
   color: rgb(15, 12, 29);
   cursor: pointer;
 }

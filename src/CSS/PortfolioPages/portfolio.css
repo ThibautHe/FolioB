@@ -4,7 +4,8 @@
 }
 .pf-main-content ul
 {
-    display:flex;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
     flex-wrap: wrap;
     font-size: 0;
 }
@@ -16,14 +17,18 @@
 
 .pf-main-content ul li
 {
-    width: 50%;
     box-sizing: border-box;
+}
+
+.grid-2-span-col
+{
+grid-column: span 2;
 }
 
 .pf-main-title
 {
     text-align: center;
-    margin: 5vh 0;
+    padding: 5vh 0;
 }
 
 .pf-hr
