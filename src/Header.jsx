@@ -5,6 +5,7 @@ import { Socials } from "./Socials.jsx";
 import "./CSS/MainHeader.css";
 import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 import { Outlet } from "react-router-dom";
+import { HamburgerMenu } from "./HamburgerMenu.jsx";
 
 export function Header() {
   const navItems = ["Home", "Portfolio", "Contact"];
@@ -16,6 +17,7 @@ export function Header() {
     <div className="MainHeader" style={{ backgroundColor: theme }}>
       <Logo />
       <Nav navs={navItems} />
+      <HamburgerMenu/>
       <Socials SocialsList={socials} />
     </div>
   
