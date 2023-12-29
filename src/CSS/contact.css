@@ -1,5 +1,9 @@
+:root {
+  --color1: 255, 183, 74;
+}
+
 .contact-container {
-  margin: 5em;
+  padding: 5em;
 }
 .contact-content {
   position: relative;
@@ -38,7 +42,6 @@
 
 .contact-form {
   width: 40%;
-  border: 1px solid black;
   display: flex;
 }
 
@@ -46,35 +49,30 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-evenly;
-  margin: auto 0;
 }
 .contact-form form input {
   width: 50%;
-  margin: 1em;
-  background-color: blue;
   border: none;
-  padding: 5px;
-  border-radius: 8px;
-}
-.contact-form form input[type="submit"] {
-  width: 30%;
-  background-color: green;
-  cursor: pointer;
+  border-bottom: 1px solid black;
+  margin-bottom: 1.5em;
 }
 
-.test {
-  width: 500px;
-  background-color: rebeccapurple;
-  height: 300px;
-  margin: auto 0;
-}
-.testdiv {
+.name-input-div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
-  background-color: blue;
+}
+
+.submit-btn
+{
+    width: 30%;
+    cursor: pointer;
+    margin-top: 1.5em;
+    border: 1px solid white;
+    padding: 10px;
+    transition: 1s;
+}
+.submit-btn:hover
+{
+    color: rgb(var(--color1));
 }

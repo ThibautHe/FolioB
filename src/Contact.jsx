@@ -3,13 +3,17 @@ import { Footer } from "./Footer.jsx";
 import { Header } from "./header.jsx";
 import "./CSS/contact.css";
 import { useState } from "react";
+import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 
 export function Contact() {
+  const { theme } = useColorTheme();
+
   const [formData, setFormData] = useState({
     name: "",
     description: "",
     email: "",
   });
+  const [submitColor, setSubmitColor] = useState(theme);
 
   // Handle input changes
   const handleInputChange = (e) => {
@@ -25,9 +29,16 @@ export function Contact() {
     alert("form has been submitted");
   };
 
+  const handleMouseEnter = (e) => {
+    setSubmitColor("black");
+  };
+  const handleMouseLeave = (e) => {
+    setSubmitColor(theme);
+  };
+
   return (
     <>
-      <div className="contact-container">
+      <div className="contact-container" style={{ backgroundColor: theme }}>
         <div className="contact-content">
           <div className="contact-img">
             <div className="cimg">
@@ -40,38 +51,49 @@ export function Contact() {
           </div>
           <div className="contact-form">
             <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="name"
-                placeholder="Name..."
-                value={formData.name}
-                onChange={handleInputChange}
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="email"
-                value={formData.email}
-                onChange={handleInputChange}
-              />
+              <div className="name-input-div">
+                <label htmlFor="">Name</label>
+                <input
+                  className="name-input"
+                  style={{ backgroundColor: theme }}
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="name-input-div">
+                <label htmlFor="">email</label>
+                <input
+                  className="name-input"
+                  style={{ backgroundColor: theme }}
+                  type="text"
+                  name="email"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                />
+              </div>
+
               <textarea
+                style={{ backgroundColor: theme, width: "50%" }}
                 rows="5"
                 cols="33"
                 value={formData.description}
                 onChange={handleInputChange}
                 placeholder="This is the default comment..."
               ></textarea>
-              <input type="submit" value="Send" />
+              <input
+                className="submit-btn"
+                type="submit"
+                value="Send"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                style={{
+                  backgroundColor: submitColor,
+                }}
+              />
             </form>
           </div>
-        </div>
-      </div>
-
-      <div className="test">
-        <div className="testdiv">
-          <h1>aezaezaze</h1>
-          <h1>azeaezeza</h1>
-          <h1>azeaezaez</h1>
         </div>
       </div>
       <Footer />
