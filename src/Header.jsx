@@ -13,15 +13,17 @@ export function Header() {
   const { theme, readableColor } = useColorTheme();
 
   return (
-  <>
-    <div className="MainHeader" style={{ backgroundColor: theme }}>
-      <Logo />
-      <Nav navs={navItems} />
-      <HamburgerMenu/>
-      <Socials SocialsList={socials} />
-    </div>
-  
-    <div><Outlet/></div>
-  </>
+    <>
+      <div className="MainHeader" style={{ backgroundColor: theme }}>
+        <Logo />
+        <Nav navs={navItems} />
+        {/* <Socials SocialsList={socials} /> */}
+        <HamburgerMenu />
+      </div>
+
+      <div>
+        <Outlet />
+      </div>
+    </>
   );
 }

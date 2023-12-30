@@ -7,23 +7,28 @@ div {
   /* font-family: Octarine; */
 }
 
-ul {
+ul
+{
+  list-style-type: none;
+  padding: 0 ;
+}
+
+.mainheader-ul {
   text-decoration: none;
   display: flex;
   list-style-type: none;
   align-items: center;
   padding: 0;
+  margin-left: 35%;
 }
 
 li {
   padding: 5px;
   vertical-align: middle;
-  color: aqua;
 }
 
 .MainHeader {
   display: flex;
-  justify-content: space-between;
   padding: 25px;
   box-sizing: border-box;
 }

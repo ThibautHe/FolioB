@@ -12,12 +12,16 @@ export function Nav({ navs }) {
   }
   const { theme, readableColor } = useColorTheme();
 
-
   let navArray = [];
   currentNav.forEach((item) => {
     navArray.push(
       <li key={item} onClick={() => null}>
-        <NavLink to={`/${item}`} style={{"color":readableColor}} className={navCSS.link} href="">
+        <NavLink
+          to={`/${item}`}
+          style={{ color: readableColor }}
+          className={navCSS.link}
+          href=""
+        >
           {item}
         </NavLink>
       </li>
@@ -25,7 +29,7 @@ export function Nav({ navs }) {
   });
   return (
     <>
-      <ul>{navArray}</ul>
+      <ul className="mainheader-ul">{navArray}</ul>
     </>
   );
 }
