@@ -1,0 +1,24 @@
+.content-container {
+}
+.project-title {
+  padding: 5% 0;
+  margin-left: 15%;
+}
+
+.project-images {
+  width: 50%;
+  margin: auto;
+}
+.project-images img {
+  width: 100%;
+}
+
+.other-images {
+  display: flex;
+  justify-content: center;
+}
+.other-images img {
+  width: 20%;
+  margin: 15px;
+  box-sizing: border-box;
+}
