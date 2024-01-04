@@ -1,7 +1,7 @@
 .content-container {
 }
 .project-title {
-  padding: 5% 0;
+  padding: 0 0 3% 0;
   margin-left: 15%;
 }
 
@@ -21,4 +21,45 @@
   width: 20%;
   margin: 15px;
   box-sizing: border-box;
+}
+
+.project-about-container {
+  display: flex;
+  padding: 10%;
+  color: white;
+}
+
+.porject-div {
+  width: 50%;
+}
+
+.project-about-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-extra-container {
+  position: relative;
+}
+
+.proj-text {
+  display: flex;
+  justify-content: end;
+}
+.proj-text h1 {
+  margin: 5% 17% 0 0;
+}
+.project-extra-content {
+  padding: 5% 15%;
+  display: flow-root;
+}
+
+.project-extra-content p {
+  align-self: center;
+  margin-right: 20%;
+}
+.project-extra-content img {
+  float: right;
+  margin-left: 3%;
 }

@@ -25,6 +25,11 @@ export function SingleProject() {
       name: "anime montage",
       categorie: "montage",
       img: "../images/berkayshowreelimg.png",
+      showcaseImg: [
+        "https://picsum.photos/id/237/410/230",
+        "https://picsum.photos/id/54/410/230",
+        "https://picsum.photos/id/222/410/230",
+      ],
       description: "this is a placeholder description",
     },
     {
@@ -32,6 +37,11 @@ export function SingleProject() {
       name: "Fiverr",
       categorie: "logo animation",
       img: "../images/berkayshowreelimg.png",
+      showcaseImg: [
+        "https://picsum.photos/id/237/410/230",
+        "https://picsum.photos/id/54/410/230",
+        "https://picsum.photos/id/222/410/230",
+      ],
       description: "this is a placeholder description",
     },
   ];
@@ -53,27 +63,62 @@ export function SingleProject() {
     });
   };
   return (
-    <div className="content-container" style={{ backgroundColor: theme }}>
-      <div className="project-title">
-        <h1>{project.name}</h1>
-        <h2>{project.categorie}</h2>
-      </div>
-      <div className="project-images">
-        <img src={mainImg} alt="" />
-        <div className="other-images">
-          {secondaryImg.map((img) => (
-            <img
-              onClick={() => {
-                handleImgClicked(img);
-              }}
-              src={img}
-              alt=""
-            />
-          ))}
+    <>
+      <div className="content-container" style={{ backgroundColor: theme }}>
+        <div className="project-title">
+          <h1>{project.name}</h1>
+          <h2>{project.categorie}</h2>
+        </div>
+        <div className="project-images">
+          <img src={mainImg} alt="" />
+          <div className="other-images">
+            {secondaryImg.map((img) => (
+              <img
+                onClick={() => {
+                  handleImgClicked(img);
+                }}
+                src={img}
+                alt=""
+              />
+            ))}
+          </div>
         </div>
       </div>
-      <p>{project.description}</p>
+      <section
+        className="project-about-container"
+        style={{ backgroundColor: "black" }}
+      >
+        <div className="porject-div project-about-title">
+          <h1 style={{ color: `rgb(${color2})` }}>About the project</h1>
+        </div>
+        <div className="porject-div project-description">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel magni
+            dicta, adipisci numquam, doloribus quidem modi porro molestias
+            quaerat aspernatur nulla quis architecto reprehenderit sunt
+            necessitatibus natus minus atque corrupti?
+          </p>
+        </div>
+      </section>
+
+      <section
+        className="project-extra-container"
+        style={{ backgroundColor: theme }}
+      >
+        <div className="proj-text">
+          <h1>and a cool magazine</h1>
+        </div>
+        <div className="project-extra-content">
+          <img src="https://picsum.photos/300/400" alt="" />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Perspiciatis voluptas illo perferendis quaerat, doloribus nulla
+            animi quia cupiditate suscipit assumenda voluptate? Vero iusto natus
+            culpa provident voluptatem vel maiores earum.
+          </p>
+        </div>
+      </section>
       <Footer />
-    </div>
+    </>
   );
 }

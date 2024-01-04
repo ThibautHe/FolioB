@@ -266,8 +266,7 @@
 .footer-line {
   margin: 20px auto;
   height: 5px;
-  background-color: lightgray;
-  border-color: lightgray;
+  background-color: rgb(var(--color1));
   width: 90%;
 }
 
