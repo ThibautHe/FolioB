@@ -73,7 +73,7 @@ export function SingleProject() {
           <img src={mainImg} alt="" />
           <div className="other-images">
             {secondaryImg.map((img) => (
-              <img
+              <img key={img}
                 onClick={() => {
                   handleImgClicked(img);
                 }}
