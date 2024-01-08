@@ -120,11 +120,11 @@
   height: 5px;
   background-color: lightgray;
   border-color: lightgray;
-  width: 90%;
+  width: 60%;
 }
 .education-content-container {
   text-align: center;
-  margin: 0 25%;
+  margin: 0 20%;
   background-color: lightgray;
   margin-bottom: 100px;
 }
@@ -134,10 +134,12 @@
 }
 
 .education-school {
-  margin: 0 0 20px 0;
+  margin: 20px 0 40px 0;
+  font-size: 1.625rem;
 }
 .education-direction {
-  margin: 0 0 20px 0;
+  margin: 0 0 40px 0;
+  font-size: 1.438rem;
 }
 
 .education-img {
@@ -149,42 +151,8 @@
   width: 80%;
   margin: auto;
   text-align: justify;
-}
-
-.skills-container {
-  width: 70%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: auto;
-}
-
-.skill {
-  width: 35%;
-  margin: 10px;
-  display: flex;
-  align-items: baseline;
-}
-
-.skill-header {
-  margin-left: 1rem;
-}
-
-.skill-title {
-  font-size: 2vw;
-  margin-bottom: 15px;
-}
-
-.skill-img {
-  width: 64px;
-  height: 64px;
-  margin-right: 5px;
-}
-
-.skill-description {
-  font-size: 1.2vw;
-  text-align: justify;
-  width: 80%;
+  font-size: 0.938rem;
+  font-weight: 100;
 }
 
 .softwares-container {
@@ -208,6 +176,67 @@
   padding: 15px;
   text-align: center;
   margin: 25px;
+}
+.software-card-container {
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  border-radius: 25px;
+  position: relative;
+}
+.software-card-logo[closing] {
+  animation: fade-out 500ms forwards;
+}
+.software-card-text[opening] {
+  display: block;
+  animation: fade-in 500ms forwards;
+}
+.software-card-logo[opening] {
+  display: block;
+  animation: fade-in 500ms forwards;
+}
+.software-card-text[closing] {
+  animation: fade-out 500ms forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+.software-card-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.software-card-text {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .softwares img {
   width: 64px;

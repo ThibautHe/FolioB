@@ -1,28 +1,36 @@
+@font-face {
+  font-family: Octarine;
+  src: url("../../Fonts/OctarineFree/Octarine-Light.otf");
+}
+
+@font-face {
+  font-family: OctarineBold;
+  src: url("../../Fonts/OctarineFree/Octarine-Bold.otf");
+}
+
 .main-story-container {
-  background-color: #212121
-  ;
+  background-color: #212121;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 70vh;
   display: flex;
 }
 
 .main-story-article {
-  width: 70%;
   margin: auto;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .main-story-content {
-  width: 47%;
+  width: 40%;
   display: flex;
   flex-direction: column;
 }
-.main-story-description
-{
+.main-story-description {
   color: white;
+  width: 70%;
 }
 
 .main-story-article img {
@@ -35,7 +43,6 @@
   color: white;
 }
 
-
 .main-video {
-  width: 50%;
+  width: 40%;
 }

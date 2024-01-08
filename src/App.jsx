@@ -1,5 +1,5 @@
 // import "CSS/MainHeader.css";
-import { useContext, useState } from "react";
+import { useContext, useState, useRef } from "react";
 import { Nav } from "./Nav.jsx";
 import { Slider } from "./Slider.jsx";
 import { Header } from "./header.jsx";
@@ -10,10 +10,68 @@ import { Portfolio } from "./Portfolio.jsx";
 import { Footer } from "./Footer.jsx";
 import { Contact } from "./contact.jsx";
 import { SingleProject } from "./SingleProject.jsx";
+import FontsCSS from "./CSS/fonts.module.css";
 
 const About = () => {
   const { theme, readableColor, color1, color2 } = useColorTheme();
   console.log(color1);
+  const logoRef = useRef(null);
+  const logoTextRef = useRef(null);
+
+  const handleHover = () => {
+    const logo = logoRef.current;
+    const logotext = logoTextRef.current;
+    logotext.style.display = "block";
+    if (logo) {
+      logo.setAttribute("closing", "");
+      logotext.setAttribute("opening", "");
+
+      logo.addEventListener(
+        "animationend",
+        () => {
+          logo.removeAttribute("closing");
+          logo.style.display = "none";
+        },
+        { once: true }
+      );
+      logotext.addEventListener(
+        "animationend",
+        () => {
+          logotext.style.display = "block";
+          logotext.removeAttribute("opening");
+        },
+        { once: true }
+      );
+    }
+  };
+  const handleMouseLeave = () => {
+    const logo = logoRef.current;
+    const logotext = logoTextRef.current;
+    logo.style.display = "block";
+
+    if (logotext) {
+      logo.setAttribute("opening", "");
+      logotext.setAttribute("closing", "");
+
+      logotext.addEventListener(
+        "animationend",
+        () => {
+          logotext.removeAttribute("closing");
+          logotext.style.display = "none";
+        },
+        { once: true }
+      );
+      logo.addEventListener(
+        "animationend",
+        () => {
+          logo.style.display = "block";
+          logo.removeAttribute("opening");
+        },
+        { once: true }
+      );
+    }
+  };
+
   return (
     <div>
       <div
@@ -54,9 +112,12 @@ const About = () => {
             alt=""
           />
           <div className="main-story-content">
-            <h1 className="main-story-title">
-              how I started to like <span>motion graphics</span> and
-              <span>vfx</span>
+            <h1 className={`main-story-title ${FontsCSS.regular}`}>
+              how I started to like <br />
+              <span className={`${FontsCSS.yellow} ${FontsCSS.boldOblique}`}>
+                motion graphics
+              </span>{" "}
+              and <span className={`${FontsCSS.boldOblique}`}>vfx</span>
             </h1>
             <p className="main-story-description">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
@@ -112,78 +173,6 @@ const About = () => {
       </div>
 
       <div
-        className="skills"
-        style={{ backgroundColor: theme, color: readableColor }}
-      >
-        <div className="skills-container">
-          <div className="skill">
-            <img
-              className="skill-img"
-              src="../images/aftereffectlogo.png"
-              alt=""
-            />
-            <div className="skill-header">
-              <h1 className="skill-title">compositing</h1>
-              <p className="skill-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                unde hic quaerat perspiciatis facere provident temporibus porro
-                repudiandae, soluta neque laboriosam commodi veniam debitis
-                possimus consequuntur itaque asperiores quisquam sequi?
-              </p>
-            </div>
-          </div>
-          <div className="skill">
-            <img
-              className="skill-img"
-              src="../images/aftereffectlogo.png"
-              alt=""
-            />
-            <div className="skill-header">
-              <h1 className="skill-title">after effects</h1>
-              <p className="skill-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                unde hic quaerat perspiciatis facere provident temporibus porro
-                repudiandae, soluta neque laboriosam commodi veniam debitis
-                possimus consequuntur itaque asperiores quisquam sequi?
-              </p>
-            </div>
-          </div>
-          <div className="skill">
-            <img
-              className="skill-img"
-              src="../images/aftereffectlogo.png"
-              alt=""
-            />
-            <div className="skill-header">
-              <h1 className="skill-title">teamplayer</h1>
-              <p className="skill-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                unde hic quaerat perspiciatis facere provident temporibus porro
-                repudiandae, soluta neque laboriosam commodi veniam debitis
-                possimus consequuntur itaque asperiores quisquam sequi?
-              </p>
-            </div>
-          </div>
-          <div className="skill">
-            <img
-              className="skill-img"
-              src="../images/aftereffectlogo.png"
-              alt=""
-            />
-            <div className="skill-header">
-              <h1 className="skill-title">communication</h1>
-              <p className="skill-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                unde hic quaerat perspiciatis facere provident temporibus porro
-                repudiandae, soluta neque laboriosam commodi veniam debitis
-                possimus consequuntur itaque asperiores quisquam sequi?
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div
         className="softwares-container"
         style={{ backgroundColor: theme, color: readableColor }}
       >
@@ -195,17 +184,23 @@ const About = () => {
           <hr />
         </div>
         <div className="softwares-logo">
-          <div className="softwares">
-            <img src="../images/aftereffectlogo.png" alt="" />
-            <h1>after effect</h1>
-          </div>
-          <div className="softwares">
-            <img src="../images/logopp.png" alt="" />
-            <h1>premiere pro</h1>
-          </div>
-          <div className="softwares">
-            <img src="../images/blenderlogo.png" alt="" />
-            <h1>blender</h1>
+          <div
+            onMouseEnter={handleHover}
+            onMouseLeave={handleMouseLeave}
+            className="software-card-container"
+          >
+            <div className="software-card-content">
+              <div ref={logoRef} className="software-card-logo">
+                <img
+                  src="../images/ehb.png"
+                  alt=""
+                  style={{ width: "128px" }}
+                />
+              </div>
+              <div ref={logoTextRef} className="software-card-text">
+                <h1>EHB</h1>
+              </div>
+            </div>
           </div>
         </div>
       </div>
