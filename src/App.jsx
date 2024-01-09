@@ -11,66 +11,11 @@ import { Footer } from "./Footer.jsx";
 import { Contact } from "./contact.jsx";
 import { SingleProject } from "./SingleProject.jsx";
 import FontsCSS from "./CSS/fonts.module.css";
+import SoftwareCard from "./SoftwareCard.jsx";
 
 const About = () => {
   const { theme, readableColor, color1, color2 } = useColorTheme();
   console.log(color1);
-  const logoRef = useRef(null);
-  const logoTextRef = useRef(null);
-
-  const handleHover = () => {
-    const logo = logoRef.current;
-    const logotext = logoTextRef.current;
-    logotext.style.display = "block";
-    if (logo) {
-      logo.setAttribute("closing", "");
-      logotext.setAttribute("opening", "");
-
-      logo.addEventListener(
-        "animationend",
-        () => {
-          logo.removeAttribute("closing");
-          logo.style.display = "none";
-        },
-        { once: true }
-      );
-      logotext.addEventListener(
-        "animationend",
-        () => {
-          logotext.style.display = "block";
-          logotext.removeAttribute("opening");
-        },
-        { once: true }
-      );
-    }
-  };
-  const handleMouseLeave = () => {
-    const logo = logoRef.current;
-    const logotext = logoTextRef.current;
-    logo.style.display = "block";
-
-    if (logotext) {
-      logo.setAttribute("opening", "");
-      logotext.setAttribute("closing", "");
-
-      logotext.addEventListener(
-        "animationend",
-        () => {
-          logotext.removeAttribute("closing");
-          logotext.style.display = "none";
-        },
-        { once: true }
-      );
-      logo.addEventListener(
-        "animationend",
-        () => {
-          logo.style.display = "block";
-          logo.removeAttribute("opening");
-        },
-        { once: true }
-      );
-    }
-  };
 
   return (
     <div>
@@ -184,24 +129,11 @@ const About = () => {
           <hr />
         </div>
         <div className="softwares-logo">
-          <div
-            onMouseEnter={handleHover}
-            onMouseLeave={handleMouseLeave}
-            className="software-card-container"
-          >
-            <div className="software-card-content">
-              <div ref={logoRef} className="software-card-logo">
-                <img
-                  src="../images/ehb.png"
-                  alt=""
-                  style={{ width: "128px" }}
-                />
-              </div>
-              <div ref={logoTextRef} className="software-card-text">
-                <h1>EHB</h1>
-              </div>
-            </div>
-          </div>
+          <SoftwareCard logoSrc={"../images/ehb.png"} softwareName={"ehb"} />
+          <SoftwareCard
+            logoSrc={"../images/blenderlogo.png"}
+            softwareName={"blender"}
+          />
         </div>
       </div>
       <Footer />

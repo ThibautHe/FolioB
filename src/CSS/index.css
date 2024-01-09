@@ -183,16 +183,19 @@
   background-color: gray;
   border-radius: 25px;
   position: relative;
+  transition: scale 0.5s;
+  margin: 15px;
+}
+.software-card-container:hover {
+  scale: 1.05;
 }
 .software-card-logo[closing] {
   animation: fade-out 500ms forwards;
 }
 .software-card-text[opening] {
-  display: block;
   animation: fade-in 500ms forwards;
 }
 .software-card-logo[opening] {
-  display: block;
   animation: fade-in 500ms forwards;
 }
 .software-card-text[closing] {
@@ -202,9 +205,11 @@
 @keyframes fade-in {
   0% {
     opacity: 0;
+    transform: translate(-50%, -100%);
   }
   100% {
     opacity: 1;
+    transform: translate(-50%, -50%);
   }
 }
 
