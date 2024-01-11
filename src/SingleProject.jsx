@@ -3,7 +3,7 @@ import "./CSS/PortfolioPages/singlepage.css";
 import { useState } from "react";
 import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 import { Footer } from "./Footer.jsx";
-
+import FontsCSS from "./CSS/fonts.module.css";
 export function SingleProject() {
   const { theme, readableColor, color1, color2 } = useColorTheme();
 
@@ -66,14 +66,21 @@ export function SingleProject() {
     <>
       <div className="content-container" style={{ backgroundColor: theme }}>
         <div className="project-title">
-          <h1>{project.name}</h1>
-          <h2>{project.categorie}</h2>
+          <h2
+            className={`project-title-category-name ${FontsCSS.regularOblique}`}
+          >
+            {project.categorie}
+          </h2>
+          <h1 className={`project-title-name ${FontsCSS.boldFont}`}>
+            {project.name}
+          </h1>
         </div>
         <div className="project-images">
           <img src={mainImg} alt="" />
           <div className="other-images">
             {secondaryImg.map((img) => (
-              <img key={img}
+              <img
+                key={img}
                 onClick={() => {
                   handleImgClicked(img);
                 }}
@@ -84,14 +91,13 @@ export function SingleProject() {
           </div>
         </div>
       </div>
-      <section
-        className="project-about-container"
-        style={{ backgroundColor: "black" }}
-      >
-        <div className="porject-div project-about-title">
-          <h1 style={{ color: `rgb(${color2})` }}>About the project</h1>
+      <section className="project-about-container">
+        <div className="project-div project-about-title">
+          <h1 className={`${FontsCSS.regular}`}>
+            About the <span className={FontsCSS.yellow}>project</span>
+          </h1>
         </div>
-        <div className="porject-div project-description">
+        <div className="project-div project-description">
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel magni
             dicta, adipisci numquam, doloribus quidem modi porro molestias
@@ -106,7 +112,9 @@ export function SingleProject() {
         style={{ backgroundColor: theme }}
       >
         <div className="proj-text">
-          <h1>and a cool magazine</h1>
+          <h1>
+            and a cool <span className={FontsCSS.boldOblique}>magazine</span>
+          </h1>
         </div>
         <div className="project-extra-content">
           <img src="https://picsum.photos/300/400" alt="" />
@@ -115,6 +123,22 @@ export function SingleProject() {
             Perspiciatis voluptas illo perferendis quaerat, doloribus nulla
             animi quia cupiditate suscipit assumenda voluptate? Vero iusto natus
             culpa provident voluptatem vel maiores earum.
+            <br />
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae,
+            ipsum alias pariatur praesentium odit debitis exercitationem ducimus
+            voluptatem itaque quod nulla explicabo ea soluta a temporibus
+            deleniti eaque, eos consequuntur.
+            <br />
+            <br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In officia
+            maxime minus fuga laboriosam cum quas et, facere quibusdam, saepe
+            vel voluptatem magni, iste at molestiae temporibus iure ullam sequi.
+            <br />
+            <br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo est
+            magnam itaque temporibus hic dignissimos sequi iste labore optio
+            nihil. Quibusdam laudantium dicta ut assumenda recusandae molestias
+            ipsum? Cum, commodi.
           </p>
         </div>
       </section>

@@ -46,7 +46,7 @@ export function Portfolio() {
                 {(index + 1) % 2 === 0 && (
                   <div
                     className="pf-hr grid-2-span-col"
-                    style={{ width: "51%", height: "5px" }}
+                    style={{ width: "40%", height: "1px" }}
                   />
                 )}
               </>

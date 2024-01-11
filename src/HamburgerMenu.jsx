@@ -21,24 +21,38 @@ export function HamburgerMenu() {
         <span></span>
         <span></span>
       </div>
-      <div className={` menu-container ${isActive ? "menu-container-active" : ""}`}>
+      <div
+        className={` menu-container ${isActive ? "menu-container-active" : ""}`}
+      >
         <div
           className={` menu-content ${isActive ? "menu-content-active" : ""}`}
           style={{ backgroundColor: readableColor }}
         >
           <ul className="menu-content-ul">
             <li>
-              <NavLink to={"/Home"} className="menu-navlink">
+              <NavLink
+                to={"/Home"}
+                onClick={() => setIsActive(false)}
+                className="menu-navlink"
+              >
                 home
               </NavLink>
             </li>
             <li>
-              <NavLink to={"/Portfolio"} className="menu-navlink">
+              <NavLink
+                to={"/Portfolio"}
+                onClick={() => setIsActive(false)}
+                className="menu-navlink"
+              >
                 portfolio
               </NavLink>
             </li>
             <li>
-              <NavLink to={"/Contact"} className="menu-navlink">
+              <NavLink
+                to={"/Contact"}
+                onClick={() => setIsActive(false)}
+                className="menu-navlink"
+              >
                 contact
               </NavLink>
             </li>

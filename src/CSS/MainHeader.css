@@ -40,3 +40,10 @@ li {
 .MainHeader h1 {
   width: 0; /*makes it so the nav can margin auto over the whole div*/
 }
+
+@media screen and ((max-width: 768px)) {
+  .mainheader-ul {
+    display: none;
+  }
+  
+}

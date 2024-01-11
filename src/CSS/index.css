@@ -7,6 +7,15 @@
   font-family: OctarineBold;
   src: url("../../Fonts/OctarineFree/Octarine-Bold.otf");
 }
+@font-face {
+  font-family: OctarineLightOblique;
+  src: url("../../Fonts/OctarineFree/Octarine-LightOblique.otf");
+}
+
+@font-face {
+  font-family: OctarineBoldOblique;
+  src: url("../../Fonts/OctarineFree/Octarine-BoldOblique.otf");
+}
 * {
   font-family: Octarine;
   margin: 0;
@@ -290,11 +299,12 @@
 
 .main-footer a {
   text-decoration: none;
-  color: white;
-  padding: 15px;
-  border: 1px solid white;
+  padding: 15px 25px;
+  border: 1px solid rgb(var(--color1));
   color: white;
   transition: 0.8s;
+  font-family: OctarineLightOblique;
+  font-size: 15px;
 }
 
 .footer-line {

@@ -1,8 +1,17 @@
 .content-container {
+  padding-bottom: 5%;
 }
 .project-title {
   padding: 0 0 3% 0;
   margin-left: 15%;
+}
+.project-title-category-name {
+  color: rgb(196, 196, 196);
+  font-weight: 100;
+}
+.project-title-name {
+  color: #212121;
+  margin: .1em 0 0 1.5em;
 }
 
 .project-images {
@@ -27,16 +36,24 @@
   display: flex;
   padding: 10%;
   color: white;
+  background-color: #212121;
 }
 
-.porject-div {
+.project-div {
   width: 50%;
+}
+.project-div p{
+  width: 60%;
+  font-size: 15px;
 }
 
 .project-about-title {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.project-about-title h1 {
+  color: white;
 }
 
 .project-extra-container {
@@ -58,6 +75,7 @@
 .project-extra-content p {
   align-self: center;
   margin-right: 20%;
+  font-size: .938rem;
 }
 .project-extra-content img {
   float: right;

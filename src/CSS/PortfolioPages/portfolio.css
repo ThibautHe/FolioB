@@ -8,6 +8,7 @@
     grid-template-columns: repeat(2,1fr);
     flex-wrap: wrap;
     font-size: 0;
+    padding: 0 10%;
 }
 
 .pf-images
