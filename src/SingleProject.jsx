@@ -10,7 +10,7 @@ export function SingleProject() {
   const Projects = [
     {
       id: 1,
-      name: "vfx overload",
+      name: "Project - vfx overload",
       categorie: "blender vfx",
       img: "../images/berkayshowreelimg.png",
       showcaseImg: [

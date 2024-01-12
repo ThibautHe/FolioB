@@ -10,7 +10,7 @@ export function Portfolio() {
   const Projects = [
     {
       id: 1,
-      name: "vfx overload",
+      name: "projet - vfx overload",
       img: "../images/berkayshowreelimg.png",
       description: "this is a placeholder description",
     },
