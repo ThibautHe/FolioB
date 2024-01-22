@@ -4,8 +4,15 @@ import { useState } from "react";
 import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 import { Footer } from "./Footer.jsx";
 import FontsCSS from "./CSS/fonts.module.css";
+import loadcall, { applyOpacity } from "./ImgSlider.js";
+import React, { useEffect } from "react";
+
 export function SingleProject() {
   const { theme, readableColor, color1, color2 } = useColorTheme();
+
+  useEffect(() => {
+    loadcall();
+  }, []);
 
   const Projects = [
     {
@@ -17,6 +24,8 @@ export function SingleProject() {
         "https://picsum.photos/id/237/410/230",
         "https://picsum.photos/id/54/410/230",
         "https://picsum.photos/id/222/410/230",
+        "https://picsum.photos/id/265/410/230",
+        "https://picsum.photos/id/52/410/230",
       ],
       description: "this is a placeholder description",
     },
@@ -49,6 +58,9 @@ export function SingleProject() {
   const project = Projects.find((project) => project.id === parseInt(id));
   const [mainImg, setMainImg] = useState(project.img);
   const [secondaryImg, setSecondaryImg] = useState(project.showcaseImg);
+  useEffect(() => {
+    applyOpacity();
+  }, [secondaryImg]);
 
   const handleImgClicked = (clickedImg) => {
     setMainImg(clickedImg);
@@ -64,7 +76,11 @@ export function SingleProject() {
   };
   return (
     <>
-      <div className="content-container" style={{ backgroundColor: theme }}>
+      <div
+        draggable="false"
+        className="content-container"
+        style={{ backgroundColor: theme }}
+      >
         <div className="project-title">
           <h2
             className={`project-title-category-name ${FontsCSS.regularOblique}`}
@@ -76,18 +92,30 @@ export function SingleProject() {
           </h1>
         </div>
         <div className="project-images">
-          <img src={mainImg} alt="" />
-          <div className="other-images">
-            {secondaryImg.map((img) => (
-              <img
-                key={img}
-                onClick={() => {
-                  handleImgClicked(img);
-                }}
-                src={img}
-                alt=""
-              />
-            ))}
+          <div className="main-img">
+            <img draggable="false" src={mainImg} alt="" />
+          </div>
+          <div className="img-slider-container">
+            <div
+              id="image-track"
+              draggable="false"
+              className="other-images"
+              data-mouse-down-at="0"
+              data-prev-percentage="0"
+            >
+              {secondaryImg.map((img) => (
+                <img
+                  className="image"
+                  key={img}
+                  draggable="false"
+                  onClick={() => {
+                    handleImgClicked(img);
+                  }}
+                  src={img}
+                  alt=""
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
