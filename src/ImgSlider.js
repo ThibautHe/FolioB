@@ -26,7 +26,6 @@ const handleOnMove = (e) => {
 
 export function applyOpacity()
 {
-  console.log("APPLYOP");
   const projectImagesElement = document.querySelector(".project-images");
   const styles = window.getComputedStyle(projectImagesElement);
 
@@ -73,12 +72,10 @@ export function applyEffect(e)
 
   // Get the left and right margin values and convert them to numbers
   const marginLeft = parseFloat(styles.marginLeft);
-  const marginRight = parseFloat(styles.marginRight);
 
   // Calculate the total width, including margin
   const totalWidth = widthWithoutMargin //+ marginLeft + marginRight;
 
-  // Use totalWidth in your calculations
   const maxDelta = totalWidth / 2;
   const divCenter = widthWithoutMargin/2 + marginLeft;
 
@@ -113,7 +110,6 @@ export function applyEffect(e)
 
     const maxOpacityDistance = maxDelta; // Adjust as needed
     const maxOpacity = 1; // Maximum opacity for the center elements
-    const minOpacity = 0; // Minimum opacity for the side elements
 
     const normalizedDistance = Math.min(distanceFromCenter, maxOpacityDistance) / maxOpacityDistance;
     const opacity = maxOpacity - normalizedDistance * 1.3;
@@ -124,4 +120,7 @@ export function applyEffect(e)
   }
 }
 export default loadcall;
-/* -- Had to add extra lines for touch events -- */
+
+
+/*REFERENCE*/
+/* https://codepen.io/Hyperplexed/pen/MWXBRBp */

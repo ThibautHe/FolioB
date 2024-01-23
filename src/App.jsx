@@ -1,5 +1,5 @@
 // import "CSS/MainHeader.css";
-import { useContext, useState, useRef } from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import { Nav } from "./Nav.jsx";
 import { Slider } from "./Slider.jsx";
 import { Header } from "./header.jsx";
@@ -16,6 +16,7 @@ import SoftwareCard from "./SoftwareCard.jsx";
 const About = () => {
   const { theme, readableColor, color1, color2 } = useColorTheme();
   console.log(color1);
+  
 
   return (
     <div>
@@ -48,14 +49,16 @@ const About = () => {
         style={{ color: `rgb(${color2.join(",")})` }}
       >
         <div className="main-story-article">
-          <video
-            className="main-video"
-            loop
-            autoPlay
-            muted
-            src="../../images/ShowreelFiverr.mp4"
-            alt=""
-          />
+          <div className="main-story-video-div">
+            <video
+              className="main-video"
+              loop
+              autoPlay
+              muted
+              src="../../images/ShowreelFiverr.mp4"
+              alt=""
+            />
+          </div>
           <div className="main-story-content">
             <h1 className={`main-story-title ${FontsCSS.regular}`}>
               how I started to like <br />
@@ -126,7 +129,10 @@ const About = () => {
             <span className="bold">softwares</span>
             <span className="light"> i use</span>
           </h1>
-          <hr />
+          <div
+            className="pf-hr grid-2-span-col"
+            style={{ width: "40%", height: "1px" }}
+          />
         </div>
         <div className="softwares-logo">
           <SoftwareCard logoSrc={"../images/ehb.png"} softwareName={"ehb"} />

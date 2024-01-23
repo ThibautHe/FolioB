@@ -122,7 +122,10 @@ export function SingleProject() {
       <section className="project-about-container">
         <div className="project-div project-about-title">
           <h1 className={`${FontsCSS.regular}`}>
-            About the <span className={FontsCSS.yellow}>project</span>
+            About the{" "}
+            <span className={`${FontsCSS.yellow} ${FontsCSS.regularOblique}`}>
+              project.
+            </span>
           </h1>
         </div>
         <div className="project-div project-description">
@@ -130,7 +133,13 @@ export function SingleProject() {
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel magni
             dicta, adipisci numquam, doloribus quidem modi porro molestias
             quaerat aspernatur nulla quis architecto reprehenderit sunt
-            necessitatibus natus minus atque corrupti?
+            necessitatibus natus minus atque corrupti?Lorem ipsum dolor sit amet
+            <br />
+            <br />
+            consectetur adipisicing elit. Praesentium consectetur delectus eius
+            reiciendis! Minima magnam tempora dolorum. Voluptatum nobis iste non
+            nemo. Corrupti magnam dolor repudiandae quaerat debitis unde
+            facilis.
           </p>
         </div>
       </section>
@@ -145,7 +154,11 @@ export function SingleProject() {
           </h1>
         </div>
         <div className="project-extra-content">
-          <img src="https://picsum.photos/300/400" alt="" />
+          <img
+            src="https://picsum.photos/300/400"
+            alt=""
+            style={{ border: "2px solid black", padding:"5px" }}
+          />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Perspiciatis voluptas illo perferendis quaerat, doloribus nulla

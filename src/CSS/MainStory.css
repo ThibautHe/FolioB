@@ -19,8 +19,10 @@
 .main-story-article {
   margin: auto;
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-around;
+  justify-content: center;
+}
+.main-story-article div {
+  margin: 1.5em;
 }
 
 .main-story-content {
@@ -28,14 +30,12 @@
   display: flex;
   flex-direction: column;
 }
+.main-story-video-div {
+  width: 40%;
+}
 .main-story-description {
   color: white;
   width: 70%;
-}
-
-.main-story-article img {
-  width: 47%;
-  height: 300px;
 }
 
 .main-story-title {
@@ -44,5 +44,5 @@
 }
 
 .main-video {
-  width: 40%;
+  width: 100%;
 }

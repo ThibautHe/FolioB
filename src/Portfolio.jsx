@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./CSS/MainHeader.css";
 import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 import { NavLink, Outlet } from "react-router-dom";
@@ -12,21 +12,39 @@ export function Portfolio() {
       id: 1,
       name: "projet - vfx overload",
       img: "../images/berkayshowreelimg.png",
+      video: "../images/ShowreelFiverr.mp4",
       description: "this is a placeholder description",
     },
     {
       id: 2,
       name: "anime montage",
       img: "../images/berkayshowreelimg.png",
+      video: "../images/ShowreelFiverr.mp4",
       description: "this is a placeholder description",
     },
     {
       id: 3,
       name: "Fiverr",
       img: "../images/berkayshowreelimg.png",
+      video: "../images/ShowreelFiverr.mp4",
       description: "this is a placeholder description",
     },
   ];
+
+  useEffect(() => {
+    const videos = document.querySelectorAll(".video");
+
+    videos.forEach((video) => {
+      video.addEventListener("mouseenter", () => {
+        video.play();
+      });
+
+      video.addEventListener("mouseleave", () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+  }, []);
 
   return (
     <>
@@ -40,7 +58,7 @@ export function Portfolio() {
               <>
                 <li key={project.name}>
                   <NavLink to={`/portfolio/${project.id}`}>
-                    <img className="pf-images" src={project.img} />
+                    <video muted className="pf-images video" src={project.video} />
                   </NavLink>
                 </li>
                 {(index + 1) % 2 === 0 && (
