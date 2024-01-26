@@ -1,3 +1,7 @@
+:root {
+  --color1: 255, 183, 74;
+  --color2: 37, 41, 45;
+}
 .content-container {
   padding-bottom: 5%;
 }
@@ -22,8 +26,7 @@
   width: 100%;
 }
 
-.img-slider-container
-{
+.img-slider-container {
   width: 80%;
   margin: auto;
   overflow: hidden;
@@ -93,4 +96,22 @@
 .project-extra-content img {
   float: right;
   margin-left: 3%;
+}
+
+.DL-btn {
+  position: absolute;
+  left: 50%;
+  bottom: -2%;
+  transform: translate(-50%, 0);
+  padding: 10px;
+  border-radius: 1px 20px;
+  cursor: pointer;
+  transition: all 1s;
+  color: rgb(var(--color2));
+  background-color: rgb(var(--color1));
+}
+.DL-btn:hover {
+  color: rgb(var(--color1));
+  background-color: rgb(var(--color2));
+ 
 }

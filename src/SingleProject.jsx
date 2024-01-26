@@ -154,33 +154,43 @@ export function SingleProject() {
           </h1>
         </div>
         <div className="project-extra-content">
-          <img
-            src="https://picsum.photos/300/400"
-            alt=""
-            style={{ border: "2px solid black", padding:"5px" }}
-          />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Perspiciatis voluptas illo perferendis quaerat, doloribus nulla
-            animi quia cupiditate suscipit assumenda voluptate? Vero iusto natus
-            culpa provident voluptatem vel maiores earum.
-            <br />
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae,
-            ipsum alias pariatur praesentium odit debitis exercitationem ducimus
-            voluptatem itaque quod nulla explicabo ea soluta a temporibus
-            deleniti eaque, eos consequuntur.
-            <br />
-            <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In officia
-            maxime minus fuga laboriosam cum quas et, facere quibusdam, saepe
-            vel voluptatem magni, iste at molestiae temporibus iure ullam sequi.
-            <br />
-            <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo est
-            magnam itaque temporibus hic dignissimos sequi iste labore optio
-            nihil. Quibusdam laudantium dicta ut assumenda recusandae molestias
-            ipsum? Cum, commodi.
-          </p>
+          <div style={{ float: "right", position: "relative" }}>
+            <img
+              src="https://picsum.photos/300/400"
+              alt=""
+              style={{ border: "2px solid black", padding: "5px" }}
+            />
+            <input
+              type="button"
+              value="Download"
+              className="DL-btn"
+            />
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Perspiciatis voluptas illo perferendis quaerat, doloribus nulla
+              animi quia cupiditate suscipit assumenda voluptate? Vero iusto
+              natus culpa provident voluptatem vel maiores earum.
+              <br />
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae,
+              ipsum alias pariatur praesentium odit debitis exercitationem
+              ducimus voluptatem itaque quod nulla explicabo ea soluta a
+              temporibus deleniti eaque, eos consequuntur.
+              <br />
+              <br />
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+              officia maxime minus fuga laboriosam cum quas et, facere
+              quibusdam, saepe vel voluptatem magni, iste at molestiae
+              temporibus iure ullam sequi.
+              <br />
+              <br />
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo est
+              magnam itaque temporibus hic dignissimos sequi iste labore optio
+              nihil. Quibusdam laudantium dicta ut assumenda recusandae
+              molestias ipsum? Cum, commodi.
+            </p>
+          </div>
         </div>
       </section>
       <Footer />

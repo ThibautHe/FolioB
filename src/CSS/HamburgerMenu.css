@@ -73,7 +73,7 @@
 .menu-container {
   height: 100vh;
   height: 100dvh;
-  width: max(25vw,300px);
+  width: 100vw;
   position: fixed;
   right: 0;
   top: 0;

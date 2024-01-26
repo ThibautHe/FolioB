@@ -8,24 +8,27 @@ import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 export function Contact() {
   const { theme } = useColorTheme();
 
-  const [formData, setFormData] = useState({
-    name: "",
-    description: "",
-    email: "",
-  });
+  //CHAMP CONTROLER
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   description: "",
+  //   email: "",
+  // });
+
   const [submitColor, setSubmitColor] = useState(theme);
 
-  // Handle input changes
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  // Handle input CHAMP CONTROLER
+
+  // const handleInputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({ ...formData, [name]: value });
+  // };
 
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add logic to handle form submission with formData
-    console.log("Form submitted:", formData);
+    console.log("Form submitted:", new FormData(e.target));
     alert("form has been submitted");
   };
 
@@ -58,8 +61,7 @@ export function Contact() {
                   style={{ backgroundColor: theme }}
                   type="text"
                   name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
+                  defaultValue={"your name ..."}
                 />
               </div>
               <div className="name-input-div">
@@ -69,17 +71,21 @@ export function Contact() {
                   style={{ backgroundColor: theme }}
                   type="text"
                   name="email"
-                  value={formData.name}
-                  onChange={handleInputChange}
+                  defaultValue={"youremail@hotmail.com"}
                 />
               </div>
 
+              <label htmlFor="">Message</label>
               <textarea
-                style={{ backgroundColor: theme, width: "50%" }}
+                style={{
+                  backgroundColor: theme,
+                  borderColor: "black",
+                  color: "black",
+                  width: "50%",
+                }}
                 rows="5"
                 cols="33"
-                value={formData.description}
-                onChange={handleInputChange}
+                name="message"
                 placeholder="This is the default comment..."
               ></textarea>
               <input
@@ -88,6 +94,7 @@ export function Contact() {
                 value="Send"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
+                onSubmit={handleSubmit}
                 style={{
                   backgroundColor: submitColor,
                 }}
