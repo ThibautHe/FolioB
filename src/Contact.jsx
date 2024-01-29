@@ -32,13 +32,6 @@ export function Contact() {
     alert("form has been submitted");
   };
 
-  const handleMouseEnter = (e) => {
-    setSubmitColor("black");
-  };
-  const handleMouseLeave = (e) => {
-    setSubmitColor(theme);
-  };
-
   return (
     <>
       <div className="contact-container" style={{ backgroundColor: theme }}>
@@ -80,7 +73,6 @@ export function Contact() {
                 style={{
                   backgroundColor: theme,
                   borderColor: "black",
-                  color: "black",
                   width: "50%",
                 }}
                 rows="5"
@@ -92,12 +84,7 @@ export function Contact() {
                 className="submit-btn"
                 type="submit"
                 value="Send"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
                 onSubmit={handleSubmit}
-                style={{
-                  backgroundColor: submitColor,
-                }}
               />
             </form>
           </div>

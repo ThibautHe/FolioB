@@ -5,7 +5,8 @@ import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 import { Footer } from "./Footer.jsx";
 import FontsCSS from "./CSS/fonts.module.css";
 import loadcall, { applyOpacity } from "./ImgSlider.js";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import { motion, useScroll } from "framer-motion";
 
 export function SingleProject() {
   const { theme, readableColor, color1, color2 } = useColorTheme();
@@ -13,6 +14,11 @@ export function SingleProject() {
   useEffect(() => {
     loadcall();
   }, []);
+
+  const carouselRef = useRef(null);
+  const { scrollX } = useScroll({
+    container: carouselRef,
+  });
 
   const Projects = [
     {
@@ -54,6 +60,7 @@ export function SingleProject() {
       description: "this is a placeholder description",
     },
   ];
+
   const { id } = useParams();
   const project = Projects.find((project) => project.id === parseInt(id));
   const [mainImg, setMainImg] = useState(project.img);
@@ -102,6 +109,7 @@ export function SingleProject() {
               className="other-images"
               data-mouse-down-at="0"
               data-prev-percentage="0"
+              ref={carouselRef}
             >
               {secondaryImg.map((img) => (
                 <img
@@ -154,17 +162,16 @@ export function SingleProject() {
           </h1>
         </div>
         <div className="project-extra-content">
-          <div style={{ float: "right", position: "relative" }}>
+          <div
+            className="img-extra-content"
+            style={{ float: "right", position: "relative" }}
+          >
             <img
               src="https://picsum.photos/300/400"
               alt=""
               style={{ border: "2px solid black", padding: "5px" }}
             />
-            <input
-              type="button"
-              value="Download"
-              className="DL-btn"
-            />
+            <input type="button" value="Download" className="DL-btn" />
           </div>
           <div>
             <p>

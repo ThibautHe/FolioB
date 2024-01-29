@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import navCSS from "./CSS/nav.module.css";
 import { useColorTheme } from "./Hooks/useColorTheme.jsx";
+import "./CSS/nav.css";
 
 export function Nav({ navs }) {
   const baseNav = ["aa", "aa me", "vv"];
@@ -18,18 +19,20 @@ export function Nav({ navs }) {
       <li key={item} onClick={() => null}>
         <NavLink
           to={`/${item}`}
-          style={{ color: readableColor }}
-          className={navCSS.link}
+          className={`${navCSS.link}
+          `}
+          data-hover={item}
           href=""
         >
-          {item}
+          <span>{item}</span>
+          
         </NavLink>
       </li>
     );
   });
   return (
     <>
-      <ul className="mainheader-ul">{navArray}</ul>
+      <ul className="mainheader-ul hovermenu">{navArray}</ul>
     </>
   );
 }

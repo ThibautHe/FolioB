@@ -190,7 +190,7 @@
 .software-card-container {
   width: 100px;
   height: 100px;
-  background-color: #25292D;
+  background-color: var(--readableColor);
   border-radius: 25px;
   position: relative;
   transition: scale 0.5s;
@@ -212,10 +212,9 @@
   display: block;
   transform: translate(-50%, -100%);
   animation: fade-in 500ms;
-  color:white
+  color: white;
+  font-size: .8em;
 }
-
-
 
 @keyframes fade-in {
   0% {
@@ -257,7 +256,7 @@
 }
 
 .main-footer {
-  background-color: gray;
+  background-color: #212121;
   text-align: center;
 }
 
@@ -283,12 +282,10 @@
 .main-footer li {
   margin: 25px 25px;
 }
-:root {
-  --color1: 255, 183, 74;
-}
+
 .main-footer a:hover {
   animation-duration: 1s;
-  background-color: rgb(var(--color1));
+  background-color: var(--lightColor);
   color: rgb(15, 12, 29);
   cursor: pointer;
 }
@@ -296,7 +293,7 @@
 .main-footer a {
   text-decoration: none;
   padding: 15px 25px;
-  border: 1px solid rgb(var(--color1));
+  border: 1px solid var(--lightColor);
   color: white;
   transition: 0.8s;
   font-family: OctarineLightOblique;
@@ -306,7 +303,7 @@
 .footer-line {
   margin: 20px auto;
   height: 5px;
-  background-color: rgb(var(--color1));
+  background-color: var(--lightColor);
   width: 90%;
 }
 

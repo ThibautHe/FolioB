@@ -17,10 +17,6 @@
   src: url("../../Fonts/OctarineFree/Octarine-BoldOblique.otf");
 }
 
-:root {
-  --color1: 255, 183, 74;
-}
-
 .regular {
   font-family: Octarine;
   font-weight: normal;
@@ -38,5 +34,5 @@
 }
 
 .yellow {
-  color: rgb(var(--color1));
+  color: var(--lightColor);
 }
