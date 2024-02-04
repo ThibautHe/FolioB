@@ -6,7 +6,8 @@ import { Footer } from "./Footer.jsx";
 import FontsCSS from "./CSS/fonts.module.css";
 import loadcall, { applyOpacity } from "./ImgSlider.js";
 import React, { useEffect, useRef } from "react";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
+import { AnimatedDiv } from "./Components/AnimatedDiv.jsx";
 
 export function SingleProject() {
   const { theme, readableColor, color1, color2 } = useColorTheme();
@@ -14,11 +15,6 @@ export function SingleProject() {
   useEffect(() => {
     loadcall();
   }, []);
-
-  const carouselRef = useRef(null);
-  const { scrollX } = useScroll({
-    container: carouselRef,
-  });
 
   const Projects = [
     {
@@ -99,43 +95,65 @@ export function SingleProject() {
           </h1>
         </div>
         <div className="project-images">
-          <div className="main-img">
-            <img draggable="false" src={mainImg} alt="" />
-          </div>
+          <motion.div
+            className="main-img"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+          >
+            <motion.img
+              key={mainImg}
+              animate={{ scale: [1, 0.8, 1] }}
+              transition={{ ease: "easeIn", duration: 0.4 }}
+              draggable="false"
+              src={mainImg}
+              alt=""
+            />
+          </motion.div>
           <div className="img-slider-container">
-            <div
+            <motion.div
+              whileInView={{ opacity: [0, 1], y: [-50, 0] }}
+              transition={{ duration: 1 }}
               id="image-track"
               draggable="false"
               className="other-images"
               data-mouse-down-at="0"
               data-prev-percentage="0"
-              ref={carouselRef}
+              data-percentage="0"
             >
-              {secondaryImg.map((img) => (
-                <img
-                  className="image"
-                  key={img}
-                  draggable="false"
-                  onClick={() => {
-                    handleImgClicked(img);
-                  }}
-                  src={img}
-                  alt=""
-                />
+              {secondaryImg.map((img, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: -50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + index * 0.1 }}
+                >
+                  <motion.img
+                    whileHover={{ scale: 1.2 }}
+                    className="image"
+                    key={img}
+                    draggable="false"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => {
+                      handleImgClicked(img);
+                    }}
+                    src={img}
+                    alt=""
+                  />
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
       <section className="project-about-container">
-        <div className="project-div project-about-title">
+        <AnimatedDiv className="project-div project-about-title">
           <h1 className={`${FontsCSS.regular}`}>
             About the{" "}
             <span className={`${FontsCSS.yellow} ${FontsCSS.regularOblique}`}>
               project.
             </span>
           </h1>
-        </div>
+        </AnimatedDiv>
         <div className="project-div project-description">
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel magni
@@ -162,7 +180,7 @@ export function SingleProject() {
           </h1>
         </div>
         <div className="project-extra-content">
-          <div
+          <AnimatedDiv
             className="img-extra-content"
             style={{ float: "right", position: "relative" }}
           >
@@ -172,7 +190,7 @@ export function SingleProject() {
               style={{ border: "2px solid black", padding: "5px" }}
             />
             <input type="button" value="Download" className="DL-btn" />
-          </div>
+          </AnimatedDiv>
           <div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.

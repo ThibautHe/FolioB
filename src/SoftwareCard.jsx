@@ -79,10 +79,12 @@
 // };
 
 // export default SoftwareCard;
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 import shortid from "shortid";
+import { motion } from "framer-motion";
 
-const SoftwareCard = ({ logoSrc, softwareName }) => {
+// eslint-disable-next-line react/display-name
+const mSoftwareCard = forwardRef(({ logoSrc, softwareName }, ref) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleHover = () => {
@@ -99,6 +101,7 @@ const SoftwareCard = ({ logoSrc, softwareName }) => {
 
   return (
     <div
+      ref={ref}
       onMouseEnter={handleHover}
       onMouseLeave={handleMouseLeave}
       className="software-card-container"
@@ -122,6 +125,7 @@ const SoftwareCard = ({ logoSrc, softwareName }) => {
       </div>
     </div>
   );
-};
-
+});
+const SoftwareCard = motion(mSoftwareCard);
 export default SoftwareCard;
+//export default SoftwareCard;

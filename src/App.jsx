@@ -1,5 +1,5 @@
 // import "CSS/MainHeader.css";
-import { useContext, useState, useRef, useEffect } from "react";
+import { useContext, useState, useRef, useEffect, forwardRef } from "react";
 import { Nav } from "./Nav.jsx";
 import { Slider } from "./Slider.jsx";
 import { Header } from "./header.jsx";
@@ -12,12 +12,21 @@ import { Contact } from "./contact.jsx";
 import { SingleProject } from "./SingleProject.jsx";
 import FontsCSS from "./CSS/fonts.module.css";
 import SoftwareCard from "./SoftwareCard.jsx";
+import { AnimatedDiv } from "./Components/AnimatedDiv.jsx";
+import { motion } from "framer-motion";
 
 const About = () => {
   const { theme, readableColor, color1, color2 } = useColorTheme();
-  console.log(color1);
-  
-
+  const softwareData = [
+    { logoSrc: "../images/ehb.png", softwareName: "ehb" },
+    { logoSrc: "../images/blenderlogo.png", softwareName: "blender" },
+    { logoSrc: "../images/blenderlogo.png", softwareName: "blender" },
+    { logoSrc: "../images/blenderlogo.png", softwareName: "blender" },
+    { logoSrc: "../images/blenderlogo.png", softwareName: "blender" },
+    { logoSrc: "../images/blenderlogo.png", softwareName: "blender" },
+    { logoSrc: "../images/blenderlogo.png", softwareName: "blender" },
+    // Add more software data as needed
+  ];
   return (
     <div>
       <div
@@ -134,13 +143,17 @@ const About = () => {
             style={{ width: "40%", height: "1px" }}
           />
         </div>
-        <div className="softwares-logo">
-          <SoftwareCard logoSrc={"../images/ehb.png"} softwareName={"ehb"} />
-          <SoftwareCard
-            logoSrc={"../images/blenderlogo.png"}
-            softwareName={"blender"}
-          />
-        </div>
+        <AnimatedDiv className="softwares-logo" staggerchildrens={true}>
+          {softwareData.map((software, index) => (
+            <SoftwareCard
+              key={index} // Add a unique key for each item in the array
+              logoSrc={software.logoSrc}
+              softwareName={software.softwareName}
+              whileInView={{ y: [-50, 0] }}
+              transition={{ delay: 0.2 + index * 0.1 }}
+            />
+          ))}
+        </AnimatedDiv>
       </div>
       <Footer />
     </div>
