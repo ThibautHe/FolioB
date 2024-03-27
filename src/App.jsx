@@ -2,7 +2,7 @@
 import { useContext, useState, useRef, useEffect, forwardRef } from "react";
 import { Nav } from "./Nav.jsx";
 import { Slider } from "./Slider.jsx";
-import { Header } from "./header.jsx";
+import { Header } from "./Header.jsx";
 import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 import "./CSS/MainStory.css";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
