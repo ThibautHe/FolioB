@@ -179,7 +179,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2em;
+  padding-top: 2em;
 }
 
 .softwares {
@@ -213,7 +213,7 @@
   transform: translate(-50%, -100%);
   animation: fade-in 500ms;
   color: white;
-  font-size: .8em;
+  font-size: 0.8em;
 }
 
 @keyframes fade-in {

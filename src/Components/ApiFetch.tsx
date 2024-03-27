@@ -21,20 +21,22 @@ export function Demo() {
 
   useEffect(() => {
     const fetchposts = async () => {
-        abortControllerRef.current?.abort();
-        abortControllerRef.current = new AbortController();
+      abortControllerRef.current?.abort();
+      abortControllerRef.current = new AbortController();
       setIsLoading(true);
 
       try {
-        const response = await fetch(`${BASE_URL}.json`,{signal:abortControllerRef.current?.signal});
+        const response = await fetch(`${BASE_URL}.json`, {
+          method: "GET",
+          signal: abortControllerRef.current?.signal,
+        });
         const posts = await response.json();
         const data = Object.values(posts.data) as Post[];
         setPosts(data);
       } catch (error: any) {
-        if( error.name = "AbortError")
-        {
-            console.log("aborted");
-            return;
+        if ((error.name = "AbortError")) {
+          console.log("aborted");
+          return;
         }
         setError(error);
       } finally {

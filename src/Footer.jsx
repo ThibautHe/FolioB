@@ -13,21 +13,19 @@ export function Footer() {
           </span>
         </h1>
         <p className="main-footer-description">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
-          distinctio amet voluptatem magnam? Obcaecati harum repellat laboriosam
-          impedit? Vero porro ea dolore incidunt vel maxime quibusdam sequi sed.
-          Illo, nisi?
+          If you want to get in touch, dont hesitate to send an emain or contact
+          me on linkedin
         </p>
         <ul>
           <li>
-            <a href="">emaill</a>
+            <a href="mailto:thibaut.hellinckx@hotmail.com">emaill</a>
           </li>
           <li>
             <a href="">linkedin</a>
           </li>
         </ul>
         <div className="footer-line"></div>
-        <p className="main-footer-close">berkay erdemir 2023</p>
+        <p className="main-footer-close">Thibaut Hellinckx 2023</p>
       </div>
     </>
   );

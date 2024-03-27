@@ -14,17 +14,38 @@ import FontsCSS from "./CSS/fonts.module.css";
 import SoftwareCard from "./SoftwareCard.jsx";
 import { AnimatedDiv } from "./Components/AnimatedDiv.jsx";
 import { motion } from "framer-motion";
+import UnitySvg from "./Components/Svg/UnitySvg.jsx";
+import ReactSvg from "./Components/Svg/ReactSvg.jsx";
+import GithubSvg from "./Components/Svg/GithubSvg.jsx";
+import CsharpSvg from "./Components/Svg/CsharpSvg.jsx";
 
 const About = () => {
   const { theme, readableColor, color1, color2 } = useColorTheme();
   const softwareData = [
-    { logoSrc: "../images/ehb.png", softwareName: "ehb" },
-    { logoSrc: "../images/blenderlogo.png", softwareName: "blender" },
-    { logoSrc: "../images/blenderlogo.png", softwareName: "blender" },
-    { logoSrc: "../images/blenderlogo.png", softwareName: "blender" },
-    { logoSrc: "../images/blenderlogo.png", softwareName: "blender" },
-    { logoSrc: "../images/blenderlogo.png", softwareName: "blender" },
-    { logoSrc: "../images/blenderlogo.png", softwareName: "blender" },
+    {
+      id: 1,
+      logoSrc: <UnitySvg />,
+      softwareName: "Unity",
+      type: "svg",
+    },
+    {
+      id: 2,
+      logoSrc: <ReactSvg />,
+      softwareName: "React",
+      type: "svg",
+    },
+    {
+      id: 3,
+      logoSrc: <GithubSvg />,
+      softwareName: "Github",
+      type: "svg",
+    },
+    {
+      id: 4,
+      logoSrc: <CsharpSvg />,
+      softwareName: "C#",
+      type: "svg",
+    },
     // Add more software data as needed
   ];
   return (
@@ -35,12 +56,13 @@ const About = () => {
       >
         <div className="mainArticle">
           <h1 className="mainTitle">
-            berkay <span className="mainTitleSpan">erdemir.</span>
+            Thibaut <span className="mainTitleSpan">Hellinckx.</span>
           </h1>
           <p className="mainDescription">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-            possimus sed saepe dolor quibusdam quae animi corrupti iste error
-            iusto, illum et. Ab, repellat sint iure ea architecto qui quod.
+            I'm a young graduate passionated about development, I've been busy
+            on different fields such as web development aswell as game
+            development. In my free time I like to code play video games and
+            prepare my future hollidays to Japan !
           </p>
           <Slider isVertical={false} hasEffect={true} isRelative={true} />
         </div>
@@ -64,7 +86,7 @@ const About = () => {
               loop
               autoPlay
               muted
-              src="../../images/ShowreelFiverr.mp4"
+              src="../../images/finalproject/trailerFinalwork.mp4"
               alt=""
             />
           </div>
@@ -72,15 +94,20 @@ const About = () => {
             <h1 className={`main-story-title ${FontsCSS.regular}`}>
               how I started to like <br />
               <span className={`${FontsCSS.yellow} ${FontsCSS.boldOblique}`}>
-                motion graphics
+                Web
               </span>{" "}
-              and <span className={`${FontsCSS.boldOblique}`}>vfx</span>
+              and <span className={`${FontsCSS.boldOblique}`}>Game dev</span>
             </h1>
             <p className="main-story-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-              dignissimos atque mollitia quisquam eaque, dolores accusamus hic
-              voluptas vero quis ex quas quidem, asperiores id. Esse alias
-              dolorum impedit optio.
+              Ever since I can remember I've been playing video games, It has
+              always been a mystery to me on how they were made, untill I
+              started to learn more about the dev behind. After which it was
+              even MORE a mystery, a mystery that I would love to explore.
+              That's also what I did. Along my exploration I went to a school
+              where I discovered general coding but also last but not least, Web
+              development, This is where my love for web dev started too. I'm
+              still to this day fascinated by everything possible on the web and
+              I would love to explore this field even more.
             </p>
           </div>
         </div>
@@ -106,23 +133,23 @@ const About = () => {
               <span className="bold"> creative technologies</span>
             </h3>
             <p className="education-description">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam
-              nam consequuntur accusantium, repellendus id non minus eos
-              aliquam, dolor aut enim eius ad! Quo architecto, cumque dolorem ab
-              fugit officiis! Lorem ipsum dolor sit amet consectetur,
-              adipisicing elit. Provident quod, eveniet laboriosam sequi ducimus
-              at delectus, necessitatibus corrupti sunt cumque esse! Neque iure
-              soluta magnam laborum dolore? Harum, temporibus cupiditate.lorem
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-              cumque esse similique atque, saepe perspiciatis impedit error,
-              odit id maiores blanditiis eaque modi minima iure amet dicta, nemo
-              natus aliquid!
+              During my bachelor I got the opportunity to discover not only the
+              development but also the design part. The studies were a fine line
+              of balance between design and development. I would lie if I said
+              that I didn't have my preferences. Indeed I felt way more
+              comfortable with development than design. But I'm thankfull to
+              know have at least some bases in design. Along the road we had to
+              opportunity to chose a path. it wasnt possible to chose all of
+              them so I chose the game development course along with the other
+              courses where I could explore the mystery of how game were made
+              that since kid kept me awake at night.
               <br />
               <br />
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis iure ex exercitationem ducimus repellendus cumque cum
-              libero reprehenderit sed dignissimos fugit facilis assumenda magni
-              labore numquam hic atque, maiores dicta?
+              What I mostly learned during these studies is that I'm far from
+              knowing everything there is to know. I learned to learn, and to
+              keep learning every day, that's what they called "lifelong
+              learning". It was very autonmous learnig which wasnt always easy
+              but at least I know now that it is possible.
             </p>
             <img className="education-img" src="../images/ehb.png" alt="" />
           </div>
@@ -146,9 +173,10 @@ const About = () => {
         <AnimatedDiv className="softwares-logo" staggerchildrens={true}>
           {softwareData.map((software, index) => (
             <SoftwareCard
-              key={index} // Add a unique key for each item in the array
+              key={software.id} // Add a unique key for each item in the array
               logoSrc={software.logoSrc}
               softwareName={software.softwareName}
+              type={software.type}
               whileInView={{ y: [-50, 0] }}
               transition={{ delay: 0.2 + index * 0.1 }}
             />

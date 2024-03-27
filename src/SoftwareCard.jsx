@@ -82,9 +82,11 @@
 import React, { forwardRef, useState } from "react";
 import shortid from "shortid";
 import { motion } from "framer-motion";
+import { useColorTheme } from "./Hooks/useColorTheme";
+
 
 // eslint-disable-next-line react/display-name
-const mSoftwareCard = forwardRef(({ logoSrc, softwareName }, ref) => {
+const mSoftwareCard = forwardRef(({ logoSrc, softwareName, type }, ref) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleHover = () => {
@@ -93,10 +95,6 @@ const mSoftwareCard = forwardRef(({ logoSrc, softwareName }, ref) => {
 
   const handleMouseLeave = () => {
     setIsHovered(false);
-  };
-
-  const getRandomKey = () => {
-    return shortid.generate();
   };
 
   return (
@@ -108,24 +106,44 @@ const mSoftwareCard = forwardRef(({ logoSrc, softwareName }, ref) => {
     >
       <div key={getRandomKey} className="software-card-content">
         {isHovered ? (
-          <div className="software-card-text">
-            <h1>{softwareName}</h1>
-          </div>
+          <TextCard softwareName={softwareName}></TextCard>
         ) : (
-          <div
-            key={getRandomKey}
-            className="software-card-logo"
-            style={{
-              width: "64px",
-            }}
-          >
-            <img src={logoSrc} alt="" style={{ width: "64px" }} />
-          </div>
+          <LogoCard logosrc={logoSrc} type={type}></LogoCard>
         )}
       </div>
     </div>
   );
 });
+
+const TextCard = ({ softwareName }) => (
+  <div className="software-card-text">
+    <h1>{softwareName}</h1>
+  </div>
+);
+const LogoCard = ({ logosrc, type }) => {
+  const { readableColor, inverseReadableColor } = useColorTheme();
+  return (
+    <div
+      key={getRandomKey}
+      className="software-card-logo"
+      style={{
+        width: "64px",
+        fill: inverseReadableColor,
+      }}
+    >
+      {type == "svg" ? (
+        logosrc
+      ) : (
+        <img src={logosrc} alt="" style={{ width: "64px" }} />
+      )}
+    </div>
+  );
+};
+
+const getRandomKey = () => {
+  return shortid.generate();
+};
+
 const SoftwareCard = motion(mSoftwareCard);
 export default SoftwareCard;
 //export default SoftwareCard;

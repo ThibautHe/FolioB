@@ -11,6 +11,7 @@ export function useColorTheme() {
   const {
     color,
     readableColor,
+    inverseReadableColor,
     handleThemeChange,
     colorPercentage,
     color1,
@@ -19,6 +20,7 @@ export function useColorTheme() {
   return {
     theme: color,
     readableColor,
+    inverseReadableColor,
     handleThemeChange,
     colorPercentage,
     color1,
@@ -89,6 +91,7 @@ export function ThemeContextProvider({ children }) {
       value={{
         color,
         readableColor,
+        inverseReadableColor,
         handleThemeChange,
         colorPercentage,
         color1,

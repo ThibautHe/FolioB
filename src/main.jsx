@@ -6,9 +6,11 @@ import { ThemeContextProvider } from "./Hooks/useColorTheme.jsx";
 import { Demo } from "./Components/ApiFetch.tsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Demo/>
-    {/* <ThemeContextProvider>
-    <App />
-    </ThemeContextProvider> */}
+    {/*
+      <Demo/>
+*/}
+    <ThemeContextProvider>
+      <App />
+    </ThemeContextProvider>
   </React.StrictMode>
 );

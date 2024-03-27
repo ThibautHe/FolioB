@@ -3,18 +3,24 @@
 }
 .pf-main-content ul {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 50%);
   flex-wrap: wrap;
   font-size: 0;
   padding: 0 10%;
 }
 
 .pf-images {
-  width: 100%;
+  height: 300px;
 }
 
 .pf-main-content ul li {
   box-sizing: border-box;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  overflow: hidden;
 }
 
 .grid-2-span-col {

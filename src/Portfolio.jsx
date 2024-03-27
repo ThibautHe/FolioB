@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import "./CSS/MainHeader.css";
 import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 import { NavLink, Outlet } from "react-router-dom";
@@ -10,24 +10,43 @@ export function Portfolio() {
   const Projects = [
     {
       id: 1,
-      name: "projet - vfx overload",
-      img: "../images/berkayshowreelimg.png",
-      video: "../images/ShowreelFiverr.mp4",
+      name: "Corsairs",
+      img: "../../images/fishing/CORSAIRS01.png",
+      video: "",
       description: "this is a placeholder description",
+      isVideo: false,
     },
     {
       id: 2,
-      name: "anime montage",
-      img: "../images/berkayshowreelimg.png",
-      video: "../images/ShowreelFiverr.mp4",
+      name: "New Portfolio",
+      img: "../../images/folioT/folioT.jpg",
+      video: "",
       description: "this is a placeholder description",
+      isVideo: false,
+    },
+    {
+      id: 2,
+      name: "Unity - Final project",
+      img: "",
+      video: "../../images/finalproject/trailerFinalwork.mp4",
+      description: "this is a placeholder description",
+      isVideo: true,
     },
     {
       id: 3,
-      name: "Fiverr",
-      img: "../images/berkayshowreelimg.png",
-      video: "../images/ShowreelFiverr.mp4",
+      name: "worms",
+      img: "../../images/worms/pfolio-web-worms1.png",
+      video: "",
       description: "this is a placeholder description",
+      isVideo: false,
+    },
+    {
+      id: 4,
+      name: "Unity - first project",
+      img: "",
+      video: "../../images/rpggame/trailerFirstGame.mp4",
+      description: "this is a placeholder description",
+      isVideo: true,
     },
   ];
 
@@ -58,7 +77,15 @@ export function Portfolio() {
               <>
                 <li key={project.name}>
                   <NavLink to={`/portfolio/${project.id}`}>
-                    <video muted className="pf-images video" src={project.video} />
+                    {project.isVideo ? (
+                      <video
+                        muted
+                        className="pf-images video"
+                        src={project.video}
+                      />
+                    ) : (
+                      <img src={project.img} className="pf-images"></img>
+                    )}
                   </NavLink>
                 </li>
                 {(index + 1) % 2 === 0 && (

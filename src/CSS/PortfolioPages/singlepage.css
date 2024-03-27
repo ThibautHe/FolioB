@@ -116,3 +116,32 @@
   color: var(--readableColor);
   background-color: var(--inverseReadableColor);
 }
+
+.nextProject {
+  background-image: var(--nextProjectImg);
+  height: 40vh;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  cursor: pointer;
+}
+.nextProjectTitle {
+  position: absolute;
+  font-size: 4rem;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.project-problems-container {
+  padding: 10% 0 15% 0;
+}
+
+.project-problems {
+  width: 50%;
+  margin: auto;
+}
+.project-problems h1 {
+  margin: 5% 0;
+}

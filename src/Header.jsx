@@ -8,7 +8,7 @@ import { Outlet } from "react-router-dom";
 import { HamburgerMenu } from "./HamburgerMenu.jsx";
 
 export function Header() {
-  const navItems = ["Home", "Portfolio", "Contact"];
+  const navItems = ["Home", "Portfolio"];
   const socials = ["insta", "fb", "linkdn"];
   const { theme, readableColor } = useColorTheme();
 

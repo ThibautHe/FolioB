@@ -10,8 +10,7 @@ export const Slider = ({
   BallPos,
 }) => {
   const [isDragging, setIsDragging] = useState(false);
-  const { theme, readableColor, handleThemeChange, colorPercentage } =
-    useColorTheme();
+  const { theme, readableColor, handleThemeChange, colorPercentage } = useColorTheme();
   const sliderRef = useRef(null);
 
   const DIVNAME = isVertical ? "vslider" : "slider";
@@ -32,10 +31,7 @@ export const Slider = ({
 
       const sliderRect = sliderRef.current.getBoundingClientRect();
       let newPosition = e.clientX - sliderRect.left;
-      console.log(sliderRect.left);
-      console.log(sliderRect.width);
-      console.log(e.clientX);
-      console.log(newPosition);
+      
       if (newPosition < 0) {
         newPosition = 0;
       } else if (newPosition > sliderRect.width) {
