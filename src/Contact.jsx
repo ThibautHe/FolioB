@@ -1,6 +1,6 @@
 import React from "react";
 import { Footer } from "./Footer.jsx";
-import { Header } from "./header.jsx";
+import { Header } from "./Header.jsx";
 import "./CSS/contact.css";
 import { useState } from "react";
 import { useColorTheme } from "./Hooks/useColorTheme.jsx";

@@ -8,7 +8,7 @@ import "./CSS/MainStory.css";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Portfolio } from "./Portfolio.jsx";
 import { Footer } from "./Footer.jsx";
-import { Contact } from "./contact.jsx";
+import { Contact } from "./Contact.jsx";
 import { SingleProject } from "./SingleProject.jsx";
 import FontsCSS from "./CSS/fonts.module.css";
 import SoftwareCard from "./SoftwareCard.jsx";
