@@ -86,7 +86,7 @@ const About = () => {
               loop
               autoPlay
               muted
-              src="../../images/finalproject/trailerFinalwork.mp4"
+              src="/finalproject/trailerFinalwork.mp4"
               alt=""
             />
           </div>

@@ -38,12 +38,12 @@ export function SingleProject() {
       id: 1,
       name: "Unity - Internship",
       categorie: "Unity",
-      img: "../../images/fishing/CORSAIRS01.png",
+      img: "/fishing/CORSAIRS01.png",
       showcaseImg: [
-        "../../images/fishing/CORSAIRS02.png",
-        "../../images/fishing/CORSAIRS03.png",
-        "../../images/fishing/CORSAIRS04.png",
-        "../../images/fishing/CORSAIRS05.png",
+        "/fishing/CORSAIRS02.png",
+        "/fishing/CORSAIRS03.png",
+        "/fishing/CORSAIRS04.png",
+        "/fishing/CORSAIRS05.png",
       ],
       softwareUsed: [Softwares.github, Softwares.csharp, Softwares.unity],
       description:
@@ -58,10 +58,10 @@ export function SingleProject() {
       id: 2,
       name: "web - New Portfolio",
       categorie: "web",
-      img: "../../images/folioT/folioT.jpg",
+      img: "/folioT/folioT.jpg",
       showcaseImg: [
-        "../../images/folioT/folioT2.jpg",
-        "../../images/folioT/folioT3.jpg",
+        "/folioT/folioT2.jpg",
+        "/folioT/folioT3.jpg",
       ],
       softwareUsed: [Softwares.github, Softwares.react],
       description:
@@ -76,11 +76,11 @@ export function SingleProject() {
       id: 3,
       name: "Project - Final Project",
       categorie: "Unity",
-      img: "../../images/finalproject/pfolio_gameplay.png",
+      img: "/finalproject/pfolio_gameplay.png",
       showcaseImg: [
-        "../../images/finalproject/pfolio_menu.png",
-        "../../images/finalproject/pfolio_upgrade.png",
-        "../../images/finalproject/pfolio_upgradesMenu.png",
+        "/finalproject/pfolio_menu.png",
+        "/finalproject/pfolio_upgrade.png",
+        "/finalproject/pfolio_upgradesMenu.png",
       ],
       softwareUsed: [Softwares.unity, Softwares.github, Softwares.csharp],
       description:
@@ -94,10 +94,10 @@ export function SingleProject() {
       id: 4,
       name: "Unity - First project",
       categorie: "Unity",
-      img: "../../images/rpggame/rpgGame.png",
+      img: "/rpggame/rpgGame.png",
       showcaseImg: [
-        "../../images/rpggame/rpgGame2.png",
-        "../../images/rpggame/rpgGame3.png",
+        "/rpggame/rpgGame2.png",
+        "/rpggame/rpgGame3.png",
       ],
       softwareUsed: [Softwares.unity, Softwares.csharp],
       description:
@@ -111,10 +111,10 @@ export function SingleProject() {
       id: 5,
       name: "Web - Worms",
       categorie: "Web",
-      img: "../../images/worms/pfolio-web-worms1.png",
+      img: "/worms/pfolio-web-worms1.png",
       showcaseImg: [
-        "../../images/worms/pfolio-web-worms3.png",
-        "../../images/worms/pfolio-web-worms2.png",
+        "/worms/pfolio-web-worms3.png",
+        "/worms/pfolio-web-worms2.png",
       ],
       softwareUsed: [Softwares.github],
       description:
@@ -352,7 +352,7 @@ export function SingleProject() {
       */}
       <section
         className="nextProject"
-        style={{ "--nextProjectImg": `url(../${nextProject.img})` }}
+        style={{ "--nextProjectImg": `url(/${nextProject.img})` }}
         onClick={handleNextProjectClicked}
       >
         <h1 className={`nextProjectTitle ${FontsCSS.boldFont}`}>
