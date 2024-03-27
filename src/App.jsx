@@ -62,7 +62,7 @@ const About = () => {
             I'm a young graduate passionated about development, I've been busy
             on different fields such as web development aswell as game
             development. In my free time I like to code play video games and
-            prepare my future hollidays to Japan !
+            prepare my future holidays to Japan !
           </p>
           <Slider isVertical={false} hasEffect={true} isRelative={true} />
         </div>

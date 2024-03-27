@@ -145,3 +145,22 @@
 .project-problems h1 {
   margin: 5% 0;
 }
+
+@media screen and ((max-width: 768px)) {
+  .main-img {
+    width: 75%;
+  }
+  .project-about-container {
+    display: block;
+  }
+  .project-div {
+    margin: 10% auto;
+    width: 100%;
+  }
+  .project-problems h1 {
+    margin: 0 0 10% 0;
+  }
+  .project-problems {
+    width: 90%;
+  }
+}

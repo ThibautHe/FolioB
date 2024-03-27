@@ -47,15 +47,6 @@ export function HamburgerMenu() {
                 portfolio
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to={"/Contact"}
-                onClick={() => setIsActive(false)}
-                className="menu-navlink"
-              >
-                contact
-              </NavLink>
-            </li>
           </ul>
         </div>
       </div>
