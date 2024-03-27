@@ -59,10 +59,7 @@ export function SingleProject() {
       name: "web - New Portfolio",
       categorie: "web",
       img: "/folioT/folioT.jpg",
-      showcaseImg: [
-        "/folioT/folioT2.jpg",
-        "/folioT/folioT3.jpg",
-      ],
+      showcaseImg: ["/folioT/folioT2.jpg", "/folioT/folioT3.jpg"],
       softwareUsed: [Softwares.github, Softwares.react],
       description:
         "This is the latest project I started, I want to challenge myself to learn now techs and with that going out of my comfort zone.",
@@ -95,10 +92,7 @@ export function SingleProject() {
       name: "Unity - First project",
       categorie: "Unity",
       img: "/rpggame/rpgGame.png",
-      showcaseImg: [
-        "/rpggame/rpgGame2.png",
-        "/rpggame/rpgGame3.png",
-      ],
+      showcaseImg: ["/rpggame/rpgGame2.png", "/rpggame/rpgGame3.png"],
       softwareUsed: [Softwares.unity, Softwares.csharp],
       description:
         "This project is one of my first ones nothing too shavy, It was the first steps into learning game development, I just want to show it to show a bit of the path I took",
@@ -352,7 +346,7 @@ export function SingleProject() {
       */}
       <section
         className="nextProject"
-        style={{ "--nextProjectImg": `url(/${nextProject.img})` }}
+        style={{ "--nextProjectImg": `url(${nextProject.img})` }}
         onClick={handleNextProjectClicked}
       >
         <h1 className={`nextProjectTitle ${FontsCSS.boldFont}`}>
