@@ -262,7 +262,7 @@ export function SingleProject() {
           </h1>
         </AnimatedDiv>
         <div className="project-div project-description">
-          <p>{project.description}</p>
+          <p style={{ color: { readableColor } }}>{project.description}</p>
         </div>
       </section>
 

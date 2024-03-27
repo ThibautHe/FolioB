@@ -151,7 +151,7 @@ const About = () => {
               learning". It was very autonmous learnig which wasnt always easy
               but at least I know now that it is possible.
             </p>
-            <img className="education-img" src="../images/ehb.png" alt="" />
+            <img className="education-img" src="/ehb.png" alt="" />
           </div>
         </div>
       </div>
