@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./CSS/MainHeader.css";
 import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 import { NavLink, Outlet } from "react-router-dom";
-import "./CSS/PortfolioPages/Portfolio.css";
+import "./CSS/PortfolioPages/portfolio.css";
 import { Footer } from "./Footer.jsx";
 
 export function Portfolio() {
