@@ -138,11 +138,11 @@ const About = () => {
               of balance between design and development. I would lie if I said
               that I didn't have my preferences. Indeed I felt way more
               comfortable with development than design. But I'm thankfull to
-              know have at least some bases in design. Along the road we had to
+              have at least some bases in design. Along the road we had the
               opportunity to chose a path. it wasnt possible to chose all of
               them so I chose the game development course along with the other
-              courses where I could explore the mystery of how game were made
-              that since kid kept me awake at night.
+              courses where I could explore this mystery of how game were made
+              that kept me awake at night since I was a kid.
               <br />
               <br />
               What I mostly learned during these studies is that I'm far from
