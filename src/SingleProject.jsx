@@ -47,11 +47,11 @@ export function SingleProject() {
       ],
       softwareUsed: [Softwares.github, Softwares.csharp, Softwares.unity],
       description:
-        "The final test of my bachelor was an internship, where I got the opportunity to go work at fishing cactus, One of the biggest Gaming company in belgium. I was there as a Gameplay developper where I assisted the team in every part of the development of the game, such as the meetings the development and their workflow. It was a very enriching experience. I'm very gratefull for this opportunity",
+        "The final test of my bachelor was an internship, where I got the opportunity to go work at fishing cactus, One of the biggest Gaming company in belgium. I was there as a Gameplay developper where I assisted the team in every part of the development, such as the meetings the development and their workflow. It was a very enriching experience. I'm very gratefull for this opportunity",
       probleme:
         "At Fishing I worked for a good month only on bugfixing to get the hang of it. I consistantly faced new and different bugs and for the first time I had to find my way through a codebase that I didnt wrote myself. Later I went on to develop my own upgrade systeme that would empower the player. It was also very enriching for me because I had to work in combination with code all over the codebase.",
       solution:
-        "What I learned from this experience was that I had still alot to learn, and that things rarely goes as quickly as we would expect. I learned to work in a team and also that to follow a workflow, on top of that I learned to use github more effectively. After my internship I immediatly made a list of some topics in which I had to improve.",
+        "What I learned from this experience was that I had still alot to learn, and that things rarely goes as quickly as we would expect. I learned to work in a team and also to follow a workflow, on top of that I learned to use github more effectively. After my internship I immediatly made a list of some topics in which I had to improve.",
       link: "",
     },
     {
@@ -64,9 +64,9 @@ export function SingleProject() {
       description:
         "This is the latest project I started, I wanted to challenge myself to learn now techs and with that going out of my comfort zone.",
       probleme:
-        "making a website in React but this time by using TypeScript, I've been working alot with C# and I liked the way you had to define every type, That's why I thouht to learn Typescript. Secondly, I wanted to explore new features, I want to do it by implementing evey piece of other websites that I like",
+        "making a website in React but this time by using TypeScript, I've been working alot with C# and I liked the way you had to define every type, That's why I felt attracted by Typescript. Secondly, I wanted to explore new features, I want to do it by implementing evey piece of other websites that I like.",
       solution:
-        "I worked with Typescript inside the React framework. The project is still ongoing tho and I plan on updating the website every weekend, I want to add alot of interaction and animations. I would also want to create a CMS for this website. This would primarly be to train my backend skill which is currently not where I would want it to be.",
+        "I worked with Typescript inside the React framework. The project is still ongoing tho and I plan on updating the website every weekend, I want to add alot of interaction and animations. I would also want to create a CMS for this website. This would primarly be to train my backend skill which is currently not where I would like it to be.",
       link: "",
     },
     {
@@ -83,7 +83,7 @@ export function SingleProject() {
       description:
         "It was my school final project where the goal was to make a highly replayable game, We worked in a team of 2 for this project, We went for a fps game where the player would advance from room to room, where at the end of each room he would collect a new upgrade.",
       probleme:
-        "I faced alot of problemes while working on this project, the first I can remember of is making the upgrade systeme, meanwhile my colleague focused on the movements and shooting of the game I focused of the upgrades and also the procedural map that we wanted. So for the upgrades I had to find a scalable solution. I had to find a solution to be able to add more upgrades but also for the palyer to receive more upgrades of the same kind, that would make that specific power stronger.",
+        "I faced alot of problemes while working on this project, the first I can remember of is making the upgrade systeme, meanwhile my colleague focused on the movements and shooting of the game. So for the upgrades I had to find a scalable solution. I had to find a solution to be able to add more upgrades but also for the palyer to receive more upgrades of the same kind, that would make that specific power stronger.",
       solution:
         "the second challenge I faced was the procedural map, and handle the round start in thoses maps. I also wrote the code for spawning the ennemies. which had to be include in the procedural maps, Ultimately we went for semi procedural maps. one of the most difficult part was handling the navmesh for the ennemies between each map.",
     },
@@ -99,7 +99,7 @@ export function SingleProject() {
       probleme:
         "Well at that point everything was kind of a probleme for me, I struggled with pretty much every bit of the demo.",
       solution:
-        "What I realised was the lack of knowledge I had in differents aspect such as physics, movements, animations, and systemes architechtures. I'm happy to now be more comfortable within all theses topics even tho I know there will always be things to learn",
+        "What I realised was the lack of knowledge I had in differents aspect such as physics, movements, animations, and systemes architechtures. I'm happy to now be more comfortable within all theses topics even tho I know there will always be more to learn",
     },
     {
       id: 5,
@@ -112,9 +112,9 @@ export function SingleProject() {
       ],
       softwareUsed: [Softwares.github],
       description:
-        "This project was made in the context of a school task. For this task I choosed to do a website of a game that I liked so I went for Worms. The design is obviously highly inspired by the worms world.",
+        "This project was made in the context of a school task. For this task I chosed to do a website of a game that I liked so I went for Worms. The design is obviously highly inspired by the worms world.",
       probleme:
-        "So this website was kinda simple and in my comfort zone, except I had to implement some more niche features, like permanent animation or using a grid which I was not so used to.",
+        "So this website was kinda simple and in my comfort zone, except I had to implement some more niche features, like permanent animation or using a grid which I was not so used to yet.",
       solution:
         "I worked with plain html css, I didnt used any frameworks for this project. The hardest part of the project to me was finding a design. I also had to make it responsive",
       link: "",

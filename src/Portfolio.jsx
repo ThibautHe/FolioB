@@ -25,20 +25,12 @@ export function Portfolio() {
       isVideo: false,
     },
     {
-      id: 2,
+      id: 3,
       name: "Unity - Final project",
       img: "",
       video: "/finalproject/trailerFinalwork.mp4",
       description: "this is a placeholder description",
       isVideo: true,
-    },
-    {
-      id: 3,
-      name: "worms",
-      img: "/worms/pfolio-web-worms1.png",
-      video: "",
-      description: "this is a placeholder description",
-      isVideo: false,
     },
     {
       id: 4,
@@ -47,6 +39,14 @@ export function Portfolio() {
       video: "/rpggame/trailerFirstGame.mp4",
       description: "this is a placeholder description",
       isVideo: true,
+    },
+    {
+      id: 5,
+      name: "worms",
+      img: "/worms/pfolio-web-worms1.png",
+      video: "",
+      description: "this is a placeholder description",
+      isVideo: false,
     },
   ];
 
@@ -76,7 +76,12 @@ export function Portfolio() {
             {Projects.map((project, index) => (
               <>
                 <li key={project.name}>
-                  <NavLink to={`/portfolio/${project.id}`}>
+                  <NavLink
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                    to={`/portfolio/${project.id}`}
+                  >
                     {project.isVideo ? (
                       <video
                         muted

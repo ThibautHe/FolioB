@@ -21,7 +21,12 @@ export function Footer() {
             <a href="mailto:thibaut.hellinckx@hotmail.com">emaill</a>
           </li>
           <li>
-            <a href="">linkedin</a>
+            <a
+              href="https://www.linkedin.com/in/thibauthellinckx-673b081a3/"
+              target="_blank"
+            >
+              linkedin
+            </a>
           </li>
         </ul>
         <div className="footer-line"></div>

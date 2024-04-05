@@ -70,7 +70,7 @@ const About = () => {
           isVertical={true}
           hasEffect={false}
           offsetLeft={"80%"}
-          isRelative={false}
+          isRelative={true}
           sliderHeight={"35%"}
         />
       </div>
