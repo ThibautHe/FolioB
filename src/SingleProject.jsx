@@ -5,7 +5,7 @@ import { useColorTheme } from "./Hooks/useColorTheme.jsx";
 import { Footer } from "./Footer.jsx";
 import FontsCSS from "./CSS/fonts.module.css";
 import loadcall, { applyOpacity } from "./ImgSlider.js";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { AnimatedDiv } from "./Components/AnimatedDiv.jsx";
 import useNextProject from "./Hooks/useNextProject.jsx";
@@ -16,7 +16,7 @@ import GithubSvg from "./Components/Svg/GithubSvg.jsx";
 import CsharpSvg from "./Components/Svg/CsharpSvg.jsx";
 
 export function SingleProject() {
-  const { theme, readableColor, color1, color2 } = useColorTheme();
+  const { theme, readableColor } = useColorTheme();
 
   useEffect(() => {
     loadcall();
@@ -95,7 +95,7 @@ export function SingleProject() {
       showcaseImg: ["/rpggame/rpgGame2.png", "/rpggame/rpgGame3.png"],
       softwareUsed: [Softwares.unity, Softwares.csharp],
       description:
-        "This project is one of my first ones nothing too shavy, It was my first steps into learning game development, I just want to show it to show a bit of the path I took",
+        "This project is one of my first ones, nothing impressive, It was my first steps into learning game development, I just want to show it to show a bit of the path I took",
       probleme:
         "Well at that point everything was kind of a probleme for me, I struggled with pretty much every bit of the demo.",
       solution:
@@ -119,28 +119,6 @@ export function SingleProject() {
         "I worked with plain html css, I didnt used any frameworks for this project. The hardest part of the project to me was finding a design. I also had to make it responsive",
       link: "",
     },
-  ];
-
-  const softwareData = [
-    {
-      id: 1,
-      logoSrc: <UnitySvg />,
-      softwareName: "Unity",
-      type: "svg",
-    },
-    {
-      id: 3,
-      logoSrc: <GithubSvg />,
-      softwareName: "Github",
-      type: "svg",
-    },
-    {
-      id: 4,
-      logoSrc: <CsharpSvg />,
-      softwareName: "C#",
-      type: "svg",
-    },
-    // Add more software data as needed
   ];
 
   const { id } = useParams();
