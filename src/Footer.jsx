@@ -13,12 +13,12 @@ export function Footer() {
           </span>
         </h1>
         <p className="main-footer-description">
-          If you want to get in touch, dont hesitate to send an emain or contact
+          If you want to get in touch, don't hesitate to send an email or contact
           me on linkedin
         </p>
         <ul>
           <li>
-            <a href="mailto:thibaut.hellinckx@hotmail.com">emaill</a>
+            <a href="mailto:thibaut.hellinckx@hotmail.com">email</a>
           </li>
           <li>
             <a

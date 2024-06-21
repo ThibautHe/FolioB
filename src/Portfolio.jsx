@@ -10,6 +10,14 @@ export function Portfolio() {
   const Projects = [
     {
       id: 1,
+      name: "AeroDeco",
+      img: "/aerodeco.png",
+      video: "",
+      description: "this is a placeholder description",
+      isVideo: false,
+    },
+    {
+      id: 2,
       name: "Corsairs",
       img: "/fishing/CORSAIRS01.png",
       video: "",
@@ -17,7 +25,7 @@ export function Portfolio() {
       isVideo: false,
     },
     {
-      id: 2,
+      id: 3,
       name: "New Portfolio",
       img: "/folioT/folioT.jpg",
       video: "",
@@ -25,7 +33,7 @@ export function Portfolio() {
       isVideo: false,
     },
     {
-      id: 3,
+      id: 4,
       name: "Unity - Final project",
       img: "",
       video: "/finalproject/trailerFinalwork.mp4",
@@ -33,7 +41,7 @@ export function Portfolio() {
       isVideo: true,
     },
     {
-      id: 4,
+      id: 5,
       name: "Unity - first project",
       img: "",
       video: "/rpggame/trailerFirstGame.mp4",
@@ -41,7 +49,7 @@ export function Portfolio() {
       isVideo: true,
     },
     {
-      id: 5,
+      id: 6,
       name: "worms",
       img: "/worms/pfolio-web-worms1.png",
       video: "",

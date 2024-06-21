@@ -36,6 +36,21 @@ export function SingleProject() {
   const Projects = [
     {
       id: 1,
+      name: "freelance website",
+      categorie: "web",
+      img: "/aerodeco.png",
+      showcaseImg: [],
+      softwareUsed: [Softwares.github, Softwares.react],
+      description:
+        "This is a website i made for a freelancer, he wanted to show pictures and also he wanted that people could send him a mail directly from the wesbite",
+      probleme:
+        "I wasnt familiar with how the mails worked, I found out I needed a domain which i never really work in depth with, So i figured how to work with custom domain.",
+      solution:
+        "I acquired the domain and made it so it had its own url name and also this made it so the mails could be sent from this url domain. Ultimately i'm happy with how it turned out and works now",
+      link: "https://www.aerodeco.be/",
+    },
+    {
+      id: 2,
       name: "Unity - Internship",
       categorie: "Unity",
       img: "/fishing/CORSAIRS01.png",
@@ -55,7 +70,7 @@ export function SingleProject() {
       link: "",
     },
     {
-      id: 2,
+      id: 3,
       name: "web - New Portfolio",
       categorie: "web",
       img: "/folioT/folioT.jpg",
@@ -70,7 +85,7 @@ export function SingleProject() {
       link: "",
     },
     {
-      id: 3,
+      id: 4,
       name: "Project - Final Project",
       categorie: "Unity",
       img: "/finalproject/pfolio_gameplay.png",
@@ -88,7 +103,7 @@ export function SingleProject() {
         "the second challenge I faced was the procedural map, and handle the round start in thoses maps. I also wrote the code for spawning the ennemies. which had to be include in the procedural maps, Ultimately we went for semi procedural maps. one of the most difficult part was handling the navmesh for the ennemies between each map.",
     },
     {
-      id: 4,
+      id: 5,
       name: "Unity - First project",
       categorie: "Unity",
       img: "/rpggame/rpgGame.png",
@@ -102,7 +117,7 @@ export function SingleProject() {
         "What I realised was the lack of knowledge I had in differents aspect such as physics, movements, animations, and systemes architechtures. I'm happy to now be more comfortable within all theses topics even tho I know there will always be more to learn",
     },
     {
-      id: 5,
+      id: 6,
       name: "Web - Worms",
       categorie: "Web",
       img: "/worms/pfolio-web-worms1.png",
@@ -178,6 +193,13 @@ export function SingleProject() {
           <h1 className={`project-title-name ${FontsCSS.boldFont}`}>
             {project.name}
           </h1>
+          {project.link ? (
+            <a className="weblink" target="_blank" href={project.link}>
+              Visit website
+            </a>
+          ) : (
+            ""
+          )}
         </div>
         <div className="project-images">
           <motion.div

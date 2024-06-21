@@ -270,9 +270,17 @@
   width: 50%;
   margin: 3em auto;
   padding: 25px;
-  text-align: justify;
+  text-align: center;
   color: white;
 }
+
+.weblink
+{
+  display: block;
+  color: white;
+  margin: 2em 0 0 0;
+}
+
 .main-footer ul {
   display: flex;
   justify-content: center;
